@@ -98,7 +98,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                 <div class="widget dashboard-table">
                     <div class="widget-heading">
-                        <h5 class=""> {{ __('Top Internal Documents') }}</h5>
+                        <h5 class=""> {{ __('Geographic representation dredging project sites') }}</h5>
                     </div>
                     <div class="widget-content">
                         <div class="card">
