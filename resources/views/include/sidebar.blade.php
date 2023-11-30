@@ -12,12 +12,8 @@
                 </div>
             </a>
             <ul class="submenu list-unstyled collapse {{ show_class(['dashboard/*']) }}" id="dashboard"
-                data-parent="#accordionExample">
-                <li class=" {{ active_class(['dashboard/dashboard1']) }}">
-                    <a data-active="{{ is_active_route(['dashboard/dashboard1']) }}"
-                        href="{{ url('/dashboard/dashboard1') }}"> {{ __('Dashboard 1') }} </a>
-                </li>
-                <li class=" {{ active_class(['dashboard/dashboard2']) }}">
+                data-parent="#accordionExample">                
+                {{-- <li class=" {{ active_class(['dashboard/dashboard2']) }}">
                     <a data-active="{{ is_active_route(['dashboard/dashboard2']) }}"
                         href="{{ url('/dashboard/dashboard2') }}"> {{ __('Dashboard 2') }} </a>
                 </li>
@@ -32,7 +28,7 @@
                 <li class=" {{ active_class(['dashboard/dashboard5']) }}">
                     <a data-active="{{ is_active_route(['dashboard/dashboard5']) }}"
                         href="{{ url('/dashboard/dashboard5') }}"> {{ __('Dashboard 5') }} </a>
-                </li>
+                </li> --}}
                 <li class=" {{ active_class(['dashboards/documentation-reports']) }}">
                     <a data-active="{{ is_active_route(['dashboards/documentation-reports']) }}"
                         href="{{ url('/dashboards/documentation-reports') }}"> {{ __('D & R Dashboard') }} </a>
