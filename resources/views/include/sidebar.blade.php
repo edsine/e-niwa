@@ -33,9 +33,9 @@
                     <a data-active="{{ is_active_route(['dashboard/dashboard5']) }}"
                         href="{{ url('/dashboard/dashboard5') }}"> {{ __('Dashboard 5') }} </a>
                 </li>
-                <li class=" {{ active_class(['dashboard/dashboard-social']) }}">
-                    <a data-active="{{ is_active_route(['dashboard/dashboard-social']) }}"
-                        href="{{ url('/dashboard/dashboard-social') }}"> {{ __('Dashboard Social') }} </a>
+                <li class=" {{ active_class(['dashboards/documentation-reports']) }}">
+                    <a data-active="{{ is_active_route(['dashboards/documentation-reports']) }}"
+                        href="{{ url('/dashboards/documentation-reports') }}"> {{ __('D & R Dashboard') }} </a>
                 </li>
             </ul>
         </li>
