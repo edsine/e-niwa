@@ -37,6 +37,10 @@
                     <a data-active="{{ is_active_route(['dashboards/map']) }}" href="{{ url('/dashboards/map') }}">
                         {{ __('Map Dashboard') }} </a>
                 </li>
+                <li class=" {{ active_class(['dashboards/dredging-activities']) }}">
+                    <a data-active="{{ is_active_route(['dashboards/dredging-activities']) }}"
+                        href="{{ url('/dashboards/dredging-activities') }}"> {{ __('Dredging Activities') }} </a>
+                </li>
             </ul>
         </li>
     </ul>
