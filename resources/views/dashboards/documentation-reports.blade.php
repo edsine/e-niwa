@@ -69,7 +69,7 @@
     <!-- Main Body Starts -->
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
-            
+
             <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                 <a class="widget quick-category">
                     <div class="quick-category-head">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="quick-category-content">
-                        <h3> {{ __('112') }}</h3>
+                        <h3> {{ __('22,053') }}</h3>
                         <p class="font-17 text-primary mb-0"> {{ __('Reports Available') }}</p>
                     </div>
                 </a>
@@ -124,8 +124,8 @@
                         </div>
                     </div>
                     <div class="quick-category-content">
-                        <h3> {{ __('567') }}</h3>
-                        <p class="font-17 text-secondary mb-0"> {{ __('Historical Reports') }}</p>
+                        <h3> {{ __('1890') }}</h3>
+                        <p class="font-17 text-secondary mb-0"> {{ __('Project History Reports') }}</p>
                     </div>
                 </a>
             </div>
@@ -211,8 +211,8 @@
                                 <i class="las la-chart-bar sales-primary-icon"></i>
                             </div>
                             <div class="sales-progress flex-grow-1">
-                                <span class="font-12"> {{ __('Total Reports') }}</span>
-                                <span class="font-12 float-right">{{ __('#8341890') }}</span>
+                                <span class="font-12"> {{ __('Total Projects') }}</span>
+                                <span class="font-12 float-right">{{ __('1890') }}</span>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="70"
                                         style="width:70%"></div>
@@ -224,8 +224,8 @@
                                 <i class="las la-file-invoice-dollar sales-info-icon"></i>
                             </div>
                             <div class="sales-progress flex-grow-1">
-                                <span class="font-12">{{ __('Revenue from Reports') }}</span>
-                                <span class="font-12 float-right"> {{ __('#4342890') }}</span>
+                                <span class="font-12">{{ __('Revenue from Projects') }}</span>
+                                <span class="font-12 float-right"> {{ __('#4,342,890') }}</span>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="50"
                                         style="width:50%"></div>
@@ -237,8 +237,8 @@
                                 <i class="las la-file-invoice-dollar sales-warning-icon"></i>
                             </div>
                             <div class="sales-progress flex-grow-1">
-                                <span class="font-12"> {{ __('Budget for Reports') }}</span>
-                                <span class="font-12 float-right"> {{ __('#3343833') }}</span>
+                                <span class="font-12"> {{ __('Budget for Projects') }}</span>
+                                <span class="font-12 float-right"> {{ __('#9,003,343,833') }}</span>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="40"
                                         style="width:40%"></div>
@@ -250,8 +250,8 @@
                                 <i class="las las la-hand-holding-usd sales-success-icon"></i>
                             </div>
                             <div class="sales-progress flex-grow-1">
-                                <span class="font-12"> {{ __('Income from Reports') }}</span>
-                                <span class="font-12 float-right"> {{ __('#2345871') }}</span>
+                                <span class="font-12"> {{ __('Income from Complaince') }}</span>
+                                <span class="font-12 float-right"> {{ __('#1,002,345,871') }}</span>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="35"
                                         style="width:35%"></div>
@@ -385,6 +385,47 @@
                     </div>
                 </div>
             </div>
+
+
+            {{-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                <div class="widget widget-activity-four">
+                    <div class="widget-heading">
+                        <h5 class=""> {{ __('Project Reports') }}</h5>
+                    </div>
+                    <div class="widget-content">
+                        <div class="sales-summary-content d-flex mb-3 mt-4">
+                            <div class="sales-summary-icon mr-3">
+                                <i class="las la-file-alt sales-primary-icon"></i>
+                            </div>
+                            <div class="sales-progress flex-grow-1">
+                                <span class="font-12">
+                                    {{ __('Access to comprehensive project reports and documentation.') }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                <div class="widget widget-activity-four">
+                    <div class="widget-heading">
+                        <h5 class=""> {{ __('Regulatory Compliance') }}</h5>
+                    </div>
+                    <div class="widget-content">
+                        <div class="sales-summary-content d-flex mb-3 mt-4">
+                            <div class="sales-summary-icon mr-3">
+                                <i class="las la-check-circle sales-primary-icon"></i>
+                            </div>
+                            <div class="sales-progress flex-grow-1">
+                                <span class="font-12">
+                                    {{ __('Status of compliance with environmental and regulatory requirements.') }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+
+
 
         </div>
     </div>
