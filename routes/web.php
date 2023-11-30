@@ -87,6 +87,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('documentation-reports', function () {
             return view('dashboards.documentation-reports');
         });
+        Route::get('map', function () {
+            return view('dashboards.map');
+        });
     });
 
     Route::group(['prefix' => 'dashboard'], function () {
