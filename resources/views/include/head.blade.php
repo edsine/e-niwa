@@ -5,7 +5,7 @@
 <!-- CSRF Token -->
 <meta name="_token" content="{{ csrf_token() }}">
 
-<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}" />
+<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/niwa_logo_main.png') }}" />
 
 <!-- fonts library -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
