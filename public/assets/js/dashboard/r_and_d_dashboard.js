@@ -53,7 +53,7 @@
                 }
             },
             title: {
-                text: 'Total Documentation and Reports: 22,053',
+                text: 'Total Project and Compliance Reports: 22,053',
                 align: 'left',
                 margin: 0,
                 offsetX: -10,
@@ -71,10 +71,10 @@
                 lineCap: 'square'
             },
             series: [{
-                name: 'Total Reports',
+                name: 'Total Project Reports',
                 data: [3085, 2084, 3589, 12458, 4258, 6851, 2145, 7845, 3230, 9250, 7636, 1248]
             }, {
-                name: 'Total Documents',
+                name: 'Total Yearly Compliance',
                 data: [1000, 1856, 2415, 10568, 3542, 4856, 1000, 5869, 2000, 8596, 6999, 1025]
             }],
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -186,7 +186,7 @@
 
         /* Top Reports by Category - Options */
         var options = {
-            series: [65, 82, 45, 78], // Updated series values for representation
+            series: [65, 82, 45, 78], 
             chart: {
                 height: 305,
                 type: 'radialBar',
@@ -216,7 +216,7 @@
                     }
                 }
             },
-            labels: ['Environment', 'Legal', 'Financial', 'Research'],
+            labels: ['Project', 'Legal', 'environmental', 'regulatory'],
         };
 
 
