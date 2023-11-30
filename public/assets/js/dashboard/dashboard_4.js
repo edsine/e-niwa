@@ -5,10 +5,10 @@
             /* Visit and Sales Options */
             var options1 = {
                 series: [{
-                    name: 'Visit',
+                    name: 'Projected',
                     data: [3100, 2500, 2800, 5100, 4200, 1090, 1000]
                 }, {
-                    name: 'Sales',
+                    name: 'Actual',
                     data: [260, 1200, 280, 3200, 4000, 500, 684]
                 }],
                 chart: {
