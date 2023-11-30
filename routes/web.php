@@ -44,40 +44,40 @@ Route::group(['prefix' => 'authentications'], function () {
             return view('authentications.style1.confirm-email');
         });
     });
-    Route::group(['prefix' => 'style2'], function () {
-        Route::get('login', function () {
-            return view('authentications.style2.login');
-        });
-        Route::get('signup', function () {
-            return view('authentications.style2.signup');
-        });
-        Route::get('locked', function () {
-            return view('authentications.style2.locked');
-        });
-        Route::get('forgot-password', function () {
-            return view('authentications.style2.forgot-password');
-        });
-        Route::get('confirm-email', function () {
-            return view('authentications.style2.confirm-email');
-        });
-    });
-    Route::group(['prefix' => 'style3'], function () {
-        Route::get('login', function () {
-            return view('authentications.style3.login');
-        });
-        Route::get('signup', function () {
-            return view('authentications.style3.signup');
-        });
-        Route::get('locked', function () {
-            return view('authentications.style3.locked');
-        });
-        Route::get('forgot-password', function () {
-            return view('authentications.style3.forgot-password');
-        });
-        Route::get('confirm-email', function () {
-            return view('authentications.style3.confirm-email');
-        });
-    });
+    // Route::group(['prefix' => 'style2'], function () {
+    //     Route::get('login', function () {
+    //         return view('authentications.style2.login');
+    //     });
+    //     Route::get('signup', function () {
+    //         return view('authentications.style2.signup');
+    //     });
+    //     Route::get('locked', function () {
+    //         return view('authentications.style2.locked');
+    //     });
+    //     Route::get('forgot-password', function () {
+    //         return view('authentications.style2.forgot-password');
+    //     });
+    //     Route::get('confirm-email', function () {
+    //         return view('authentications.style2.confirm-email');
+    //     });
+    // });
+    // Route::group(['prefix' => 'style3'], function () {
+    //     Route::get('login', function () {
+    //         return view('authentications.style3.login');
+    //     });
+    //     Route::get('signup', function () {
+    //         return view('authentications.style3.signup');
+    //     });
+    //     Route::get('locked', function () {
+    //         return view('authentications.style3.locked');
+    //     });
+    //     Route::get('forgot-password', function () {
+    //         return view('authentications.style3.forgot-password');
+    //     });
+    //     Route::get('confirm-email', function () {
+    //         return view('authentications.style3.confirm-email');
+    //     });
+    // });
 });
 
 
@@ -91,7 +91,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('dashboard1', function () {
-            return view('dashboard.dashboard1');
+            return view('dashboards.documentation-reports');
         });
         Route::get('dashboard2', function () {
             return view('dashboard.dashboard2');
