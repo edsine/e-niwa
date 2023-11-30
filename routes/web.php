@@ -83,6 +83,12 @@ Route::group(['prefix' => 'authentications'], function () {
 
 Route::middleware(['auth'])->group(function () {
     // Authenticated routes here
+    Route::group(['prefix' => 'dashboards'], function () {
+        Route::get('documentation-reports', function () {
+            return view('dashboards.documentation-reports');
+        });
+    });
+
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('dashboard1', function () {
             return view('dashboard.dashboard1');
