@@ -1,125 +1,367 @@
-@extends('layout.master-auth')
+<!DOCTYPE html>
+<html lang="zxx" class="js">
 
-@push('plugin-styles')
-    <link rel="stylesheet" href="{{ asset('assets/css/loader.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/owl-carousel/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/owl-carousel/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/authentication/auth_1.css') }}">
-@endpush
+<head>
+    <base href="../../../">
+    <meta charset="utf-8">
+    <meta name="author" content="E-NIWA">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{-- <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers."> --}}
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="./images/favicon.png">
+    <!-- Page Title  -->
+    <title>Login | E-NIWA</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/theme.css?ver=3.2.2') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/dashlite.css?ver=3.2.2') }}">
+</head>
 
-@section('content')
-    <!-- Main Body Starts -->
-    <div class="forget-one">
-        <div class="container-fluid login-one-container">
-            <div class="p-30 h-100">
-                <div class="row login-one-container h-100">
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 p-0">
-                        <div class="login-one-start">
-                            <h6 class="mt-2 text-primary text-center font-20">{{ __('Log In') }}</h6>
-                            <p class="text-center text-muted mt-3 mb-3 font-14">{{ __('Please Log into your account') }}</p>
-                            <form method="POST" action="{{ route('login') }}">
-                                @csrf
-                                <div class="login-one-inputs mt-5">
-                                    <input id="email" type="email" @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                                        type="text" placeholder="{{ __('Email') }}" />
-                                    <i class="las la-user-alt"></i>
-
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="login-one-inputs mt-3">
-                                    <input id="password" class="form-control @error('password') is-invalid @enderror"
-                                        name="password" required autocomplete="current-password" type="password"
-                                        placeholder="{{ __('Password') }}" />
-                                    <i class="las la-lock"></i>
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="login-one-inputs check mt-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                            {{ old('remember') ? 'checked' : '' }}>
-
-                                        <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="login-one-inputs mt-4">
-                                    <button class="ripple-button ripple-button-primary btn-lg btn-login" type="submit">
-                                        <div class="ripple-ripple js-ripple">
-                                            <span class="ripple-ripple__circle"></span>
-                                        </div>
-                                        {{ __('LOG IN') }}
-                                    </button>
-                                </div>
-                                <div class="login-one-inputs mt-4 text-center font-12 strong">
-                                    @if (Route::has('password.request'))
-                                        <a href="{{ route('password.request') }}"
-                                            class="text-primary">{{ __('Forgot your Password ?') }}</a>
-                                    @endif
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-6 col-md-6 d-none d-md-block p-0">
-                        <div class="slider-half">
-                            <div class="slide-content">
-                                <div class="top-sign-up ">
-                                    <div class="about-comp text-white mt-2">{{ __('E-NIWA') }}</div>
-                                    <div class="for-sign-up">
-                                        <p class="text-white font-12 mt-2 font-weight-300">
-                                            {{ __('Don\'t have an account ?') }}</p>
-                                        <a href="{{ url('/authentications/style1/signup') }}">{{ __('Sign Up') }}</a>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                                <div class="owl-carousel owl-theme">
-                                    <div class="item">
-                                        <i class="lar la-grin-alt font-45 text-white"></i>
-                                        <h2 class="font-30 text-white mt-2">{{ __('Start your journey') }}</h2>
-                                        <p class="summary-count text-white font-12 mt-2 slide-text">
-                                            {{ __('Everyone has been made for some particular work, and the desire for that work has been put in every heart') }}
-                                        </p>
-                                    </div>
-                                    <div class="item">
-                                        <i class="lar la-clock font-45 text-white"></i>
-                                        <h2 class="font-30 text-white mt-2">{{ __('Save your time') }}</h2>
-                                        <p class="summary-count text-white font-12 mt-2 slide-text">
-                                            {{ __('Everyone has been made for some particular work, and the desire for that work has been put in every heart') }}
-                                        </p>
-                                    </div>
-                                    <div class="item">
-                                        <i class="las la-hand-holding-usd font-45 text-white"></i>
-                                        <h2 class="font-30 text-white mt-2">{{ __('Save your money') }}</h2>
-                                        <p class="summary-count text-white font-12 mt-2 slide-text">
-                                            {{ __('Everyone has been made for some particular work, and the desire for that work has been put in every heart') }}
-                                        </p>
-                                    </div>
-                                </div>
+<body class="nk-body npc-default pg-auth">
+    <div class="nk-app-root">
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- wrap @s -->
+            <div class="nk-wrap nk-wrap-nosidebar">
+                <!-- content @s -->
+                <div class="nk-content ">
+                    <div class="nk-split nk-split-page nk-split-lg">
+                        <div class="nk-split-content nk-block-area nk-block-area-column nk-auth-container bg-white">
+                            <div class="absolute-top-right d-lg-none p-3 p-sm-5">
+                                <a href="#" class="toggle btn-white btn btn-icon btn-light"
+                                    data-target="athPromo"><em class="icon ni ni-info"></em></a>
                             </div>
-                        </div>
+                            <div class="nk-block nk-block-middle nk-auth-body">
+                                <div class="brand-logo pb-5">
+                                    <a href="{{ url('html/index.html') }}" class="logo-link">
+                                        <img class="logo-light logo-img logo-img-lg"
+                                            src="{{ asset('assets/frontend/images/logo.png') }}"
+                                            srcset="{{ asset('images/logo2x.png') }} 2x" alt="logo">
+                                        <img class="logo-dark logo-img logo-img-lg"
+                                            src="{{ asset('assets/frontend/images/logo-dark.png') }}"
+                                            srcset="{{ asset('images/logo-dark2x.png') }} 2x" alt="logo-dark">
+                                    </a>
+                                </div>
+                                <div class="nk-block-head">
+                                    <div class="nk-block-head-content">
+                                        <h5 class="nk-block-title">Sign-In</h5>
+                                        <div class="nk-block-des">
+                                            <p>Access the DashLite panel using your email and passcode.</p>
+                                        </div>
+                                    </div>
+                                </div><!-- .nk-block-head -->
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
+                                    <div class="form-group">
+                                        <div class="form-label-group">
+                                            <label class="form-label" for="email-address">Email or Username</label>
+                                            <a class="link link-primary link-sm" tabindex="-1" href="#">Need
+                                                Help?</a>
+                                        </div>
+                                        <div class="form-control-wrap">
+                                            <input type="email" name="email" value="{{ old('email') }}" required
+                                                autocomplete="email" autofocus type="text"
+                                                placeholder="{{ __('Email') }}"
+                                                class="form-control form-control-lg @error('email') is-invalid @enderror"
+                                                required id="email-address"
+                                                placeholder="Enter your email address or username">
+                                        </div>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div><!-- .form-group -->
+                                    <div class="form-group">
+                                        <div class="form-label-group">
+                                            <label class="form-label" for="password">Passcode</label>
+                                            <a class="link link-primary link-sm" tabindex="-1" href="{{ route('password.request') }}">Forgot Code?</a>
+                                        </div>
+                                        <div class="form-control-wrap">
+                                            <a tabindex="-1" href="#"
+                                                class="form-icon form-icon-right passcode-switch lg"
+                                                data-target="password">
+                                                <em class="passcode-icon icon-show icon ni ni-eye"></em>
+                                                <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
+                                            </a>
+                                            <input autocomplete="new-password" class="form-control form-control-lg"
+                                                required id="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                name="password" required autocomplete="current-password" type="password"
+                                                placeholder="{{ __('Password') }}">
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div><!-- .form-group -->
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
+                                    </div>
+                                </form><!-- form -->
+                                <div class="form-note-s2 pt-4"> New on our platform? <a class="link-primary" href="{{ url('/authentications/style1/signup') }}">Create an account</a>
+                                </div>
+                            </div><!-- .nk-block -->
+                            <div class="nk-block nk-auth-footer">
+                                <div class="nk-block-between">
+                                    <ul class="nav nav-sm">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Terms & Condition</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Privacy Policy</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Help</a>
+                                        </li>
+                                        <li class="nav-item dropup">
+                                            <a class="dropdown-toggle dropdown-indicator has-indicator nav-link"
+                                                data-bs-toggle="dropdown"
+                                                data-offset="0,10"><small>English</small></a>
+                                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end">
+                                                <ul class="language-list">
+                                                    <li>
+                                                        <a href="#" class="language-item">
+                                                            <img
+                                                                src="{{ asset('assets/frontend/images/flags/english.png') }}">
+                                                            <span class="language-name">English</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="language-item">
+                                                            <img
+                                                                src="{{ asset('assets/frontend/images/flags/spanish.png') }}">
+                                                            <span class="language-name">Español</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="language-item">
+                                                            <img
+                                                                src="{{ asset('assets/frontend/images/flags/french.png') }}">
+                                                            <span class="language-name">Français</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="language-item">
+                                                            <img
+                                                                src="{{ asset('assets/frontend/images/flags/turkey.png') }}">
+                                                            <span class="language-name">Türkçe</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul><!-- .nav -->
+                                </div>
+                                <div class="mt-3">
+                                    <p>&copy; 2023 DashLite. All Rights Reserved.</p>
+                                </div>
+                            </div><!-- .nk-block -->
+                        </div><!-- .nk-split-content -->
+                        <div class="nk-split-content nk-split-stretch bg-lighter d-flex toggle-break-lg toggle-slide toggle-slide-right"
+                            data-toggle-body="true" data-content="athPromo" data-toggle-screen="lg"
+                            data-toggle-overlay="true">
+                            <div class="slider-wrap w-100 w-max-550px p-3 p-sm-5 m-auto">
+                                <div class="slider-init" data-slick='{"dots":true, "arrows":false}'>
+                                    <div class="slider-item">
+                                        <div class="nk-feature nk-feature-center">
+                                            <div class="nk-feature-img">
+                                                <img class="round"
+                                                    src="{{ asset('assets/frontend/images/slides/promo-a.png') }}"
+                                                    {{-- srcset="{{ asset('images/slides/promo-a2x.png') }} 2x" --}} alt="">
+                                            </div>
+                                            <div class="nk-feature-content py-4 p-sm-5">
+                                                <h4>Dashlite</h4>
+                                                <p>You can start to create your products easily with its user-friendly
+                                                    design & most completed responsive layout.</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- .slider-item -->
+                                    <div class="slider-item">
+                                        <div class="nk-feature nk-feature-center">
+                                            <div class="nk-feature-img">
+                                                <img class="round"
+                                                    src="{{ asset('assets/frontend/images/slides/promo-b.png') }}"
+                                                    srcset="./images/slides/promo-b2x.png 2x" alt="">
+                                            </div>
+                                            <div class="nk-feature-content py-4 p-sm-5">
+                                                <h4>Dashlite</h4>
+                                                <p>You can start to create your products easily with its user-friendly
+                                                    design & most completed responsive layout.</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- .slider-item -->
+                                    <div class="slider-item">
+                                        <div class="nk-feature nk-feature-center">
+                                            <div class="nk-feature-img">
+                                                <img class="round"
+                                                    src="{{ asset('assets/frontend/images/slides/promo-c.png') }}"
+                                                    srcset="./images/slides/promo-c2x.png 2x" alt="">
+                                            </div>
+                                            <div class="nk-feature-content py-4 p-sm-5">
+                                                <h4>Dashlite</h4>
+                                                <p>You can start to create your products easily with its user-friendly
+                                                    design & most completed responsive layout.</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- .slider-item -->
+                                </div><!-- .slider-init -->
+                                <div class="slider-dots"></div>
+                                <div class="slider-arrows"></div>
+                            </div><!-- .slider-wrap -->
+                        </div><!-- .nk-split-content -->
+                    </div><!-- .nk-split -->
+                </div>
+                <!-- wrap @e -->
+            </div>
+            <!-- content @e -->
+        </div>
+        <!-- main @e -->
+    </div>
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    <script src="{{ asset('assets/frontend/js/bundle.js?ver=3.2.2') }}"></script>
+    <script src="{{ asset('assets/frontend/js/scripts.js?ver=3.2.2"') }}"></script>
+    <!-- select region modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="region">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+                <div class="modal-body modal-body-md">
+                    <h5 class="title mb-4">Select Your Country</h5>
+                    <div class="nk-country-region">
+                        <ul class="country-list text-center gy-2">
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/arg.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">Argentina</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/aus.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">Australia</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/bangladesh.png') }}"
+                                        alt="" class="country-flag">
+                                    <span class="country-name">Bangladesh</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/canada.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">Canada <small>(English)</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/china.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">Centrafricaine</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/china.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">China</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/french.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">France</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/germany.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">Germany</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/iran.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">Iran</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/italy.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">Italy</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/mexico.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">México</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/philipine.png') }}"
+                                        alt="" class="country-flag">
+                                    <span class="country-name">Philippines</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/portugal.png') }}"
+                                        alt="" class="country-flag">
+                                    <span class="country-name">Portugal</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/s-africa.png') }}"
+                                        alt="" class="country-flag">
+                                    <span class="country-name">South Africa</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/spanish.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">Spain</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/switzerland.png') }}"
+                                        alt="" class="country-flag">
+                                    <span class="country-name">Switzerland</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/uk.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">United Kingdom</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="country-item">
+                                    <img src="{{ asset('assets/frontend/images/flags/english.png') }}" alt=""
+                                        class="country-flag">
+                                    <span class="country-name">United State</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- Main Body Ends -->
-@endsection
+            </div><!-- .modal-content -->
+        </div><!-- .modla-dialog -->
+    </div><!-- .modal -->
 
-@push('plugin-scripts')
-    <script src="{{ asset('assets/js/loader.js') }}"></script>
-    <script src="{{ asset('assets/js/libs/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('plugins/owl-carousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('plugins/owl-carousel/owl.carousel.js') }}"></script>
-    <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/authentication/auth_1.js') }}"></script>
-@endpush
+</html>
