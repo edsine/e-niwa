@@ -33,6 +33,14 @@
                     <a data-active="{{ is_active_route(['dashboards/documentation-reports']) }}"
                         href="{{ url('/dashboards/documentation-reports') }}"> {{ __('D & R Dashboard') }} </a>
                 </li>
+                <li class=" {{ active_class(['dashboards/environment-monitoring']) }}">
+                    <a data-active="{{ is_active_route(['dashboards/environment-monitoring']) }}"
+                        href="{{ url('/dashboards/environment-monitoring') }}"> {{ __('Environment Monitoring') }} </a>
+                </li>
+                <li class=" {{ active_class(['dashboards/equipment-monitoring']) }}">
+                    <a data-active="{{ is_active_route(['dashboards/equipment-monitoring']) }}"
+                        href="{{ url('/dashboards/equipment-monitoring') }}"> {{ __('Equipment Monitoring') }} </a>
+                </li>
             </ul>
         </li>
     </ul>

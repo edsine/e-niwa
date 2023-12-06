@@ -89,6 +89,13 @@ Route::middleware(['auth'])->group(function () {
         });
     });
 
+    // Authenticated routes here
+    Route::group(['prefix' => 'dashboards'], function () {
+        Route::get('environment-monitoring', function () {
+            return view('dashboards.environment-monitoring');
+        });
+    });
+
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('dashboard1', function () {
             return view('dashboards.documentation-reports');
