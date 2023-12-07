@@ -34,18 +34,16 @@
                                 <div class="brand-logo pb-5">
                                     <a href="{{ url('html/index.html') }}" class="logo-link">
                                         <img class="logo-light logo-img logo-img-lg"
-                                            src="{{ asset('assets/frontend/images/logo.png') }}"
-                                            srcset="{{ asset('images/logo2x.png') }} 2x" alt="logo">
+                                            src="{{ asset('assets/img/niwa_logo_main.png') }}" alt="logo">
                                         <img class="logo-dark logo-img logo-img-lg"
-                                            src="{{ asset('assets/frontend/images/logo-dark.png') }}"
-                                            srcset="{{ asset('images/logo-dark2x.png') }} 2x" alt="logo-dark">
+                                            src="{{ asset('assets/img/niwa_logo_main.png') }}" alt="logo-dark">
                                     </a>
                                 </div>
                                 <div class="nk-block-head">
                                     <div class="nk-block-head-content">
                                         <h5 class="nk-block-title">Sign-In</h5>
                                         <div class="nk-block-des">
-                                            <p>Access the DashLite panel using your email and passcode.</p>
+                                            <p>Access the E-NIWA panel using your email and passcode.</p>
                                         </div>
                                     </div>
                                 </div><!-- .nk-block-head -->
@@ -154,7 +152,7 @@
                                     </ul><!-- .nav -->
                                 </div>
                                 <div class="mt-3">
-                                    <p>&copy; 2023 DashLite. All Rights Reserved.</p>
+                                    <p>&copy; 2023 NIWA. All Rights Reserved.</p>
                                 </div>
                             </div><!-- .nk-block -->
                         </div><!-- .nk-split-content -->
@@ -171,7 +169,7 @@
                                                     {{-- srcset="{{ asset('images/slides/promo-a2x.png') }} 2x" --}} alt="">
                                             </div>
                                             <div class="nk-feature-content py-4 p-sm-5">
-                                                <h4>Dashlite</h4>
+                                                <h4>E-NIWA</h4>
                                                 <p>You can start to create your products easily with its user-friendly
                                                     design & most completed responsive layout.</p>
                                             </div>
@@ -185,7 +183,7 @@
                                                     srcset="./images/slides/promo-b2x.png 2x" alt="">
                                             </div>
                                             <div class="nk-feature-content py-4 p-sm-5">
-                                                <h4>Dashlite</h4>
+                                                <h4>E-NIWA</h4>
                                                 <p>You can start to create your products easily with its user-friendly
                                                     design & most completed responsive layout.</p>
                                             </div>
@@ -199,7 +197,7 @@
                                                     srcset="./images/slides/promo-c2x.png 2x" alt="">
                                             </div>
                                             <div class="nk-feature-content py-4 p-sm-5">
-                                                <h4>Dashlite</h4>
+                                                <h4>E-NIWA</h4>
                                                 <p>You can start to create your products easily with its user-friendly
                                                     design & most completed responsive layout.</p>
                                             </div>

@@ -18,24 +18,20 @@ use App\Http\Controllers\UserProfilesController;
 
 Auth::routes();
 
-Route::get('/', [LandingController::class, 'showLanding'])->name('landing');
+// Route::get('/landing', [LandingController::class, 'showLanding'])->name('landing');
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/landing-2', function () {
-    return view('landing_2');
+Route::get('/landing', function () {
+    return view('landing');
 });
 
-// Route::get('/', function () {
-//     return view('landing');
-// });
 
-
-// Route::get('/', function () {
-//     return view('dashboard.dashboard1');
-// });
+Route::get('/', function () {
+    return view('authentications.style1.login');
+});
 
 Route::group(['prefix' => 'authentications'], function () {
     Route::group(['prefix' => 'style1'], function () {
@@ -104,6 +100,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('map', function () {
             return view('dashboards.map');
         });
+    });
+
+    Route::get('/landing-2', function () {
+        return view('landing_2');
     });
 
     Route::group(['prefix' => 'dashboard'], function () {
