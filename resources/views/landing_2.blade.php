@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/theme.css?ver=3.2.2') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/dashlite.css?ver=3.2.2') }}">
     <style>
-        body {
+        @media (min-width: 768px) {
+            body {
             margin: 0;
             overflow: hidden;
             /* Prevent scrolling */
@@ -56,6 +57,7 @@
             justify-content: center;
             align-items: center;
             /* height: 100vh; */
+        }
         }
     </style>
 </head>
