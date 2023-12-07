@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\UserProfilesController;
 
 /*
@@ -17,9 +18,15 @@ use App\Http\Controllers\UserProfilesController;
 
 Auth::routes();
 
-Route::get('/', function () {
+Route::get('/', [LandingController::class, 'showLanding'])->name('landing');
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+// Route::get('/', function () {
+//     return view('landing');
+// });
 
 
 // Route::get('/', function () {
