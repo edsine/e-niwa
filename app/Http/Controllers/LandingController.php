@@ -17,7 +17,7 @@ class LandingController extends Controller
             ['image' => 'assets/images/sliders/hero-slider3.jpeg'],
         ];
 
-        return view('landing', ['sliders' => $sliders]);
+        return view('landing_2', ['sliders' => $sliders]);
     }
 }
 

@@ -32,7 +32,7 @@
                             </a>
                             <div class="text-block wide-xs mx-auto">
                                 <h3 class="text-white">Get Started</h3>
-                                <p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.</p>
+                                <p>We issue licenses for inland navigation, piers, jetties and dockyards; examine and survey inland watercraft and shipyard operators, grant permit and licenses for sand dredging, pipeline construction, dredging of slot and approve designs and construction of inland river crafts</p>
                                 <img class="nk-survey-gfx mt-5" src="{{ asset('assets/frontend/images/gfx/job-survey.svg') }}" alt="">
                             </div>
                             <p>&copy; 2023 NIWA.</p>
@@ -50,8 +50,8 @@
                                         <div class="nk-stepper-steps stepper-steps">
                                             <div class="nk-stepper-step">
                                                 <div class="nk-stepper-step-head mb-4">
-                                                    <h5 class="title">What are you looking for ?</h5>
-                                                    <p>Tation argumentum et usu, dicit viderer evertitur te has</p>
+                                                    <h5 class="title">Class of Applicant ?</h5>
+                                                    <p>What is the purpose of your application</p>
                                                 </div>
                                                 <ul class="row g-3">
                                                     <li class="col-6">
@@ -62,8 +62,8 @@
                                                                     <span class="icon-wrap xl">
                                                                         <img class="img" src="./images/icons/fornt-end-developer.svg" alt="">
                                                                     </span>
-                                                                    <span class="lead-text mb-1 mt-3">Front End Developer</span>
-                                                                    <span class="sub-text">Postea democritum mnesarchum ne nam, ad vim aperiri tractatos.</span>
+                                                                    <span class="lead-text mb-1 mt-3">Pleasure </span>
+                                                                    <span class="sub-text">Class A</span>
                                                                 </span>
                                                             </label>
                                                         </div>
@@ -76,13 +76,13 @@
                                                                     <span class="icon-wrap xl">
                                                                         <img class="img" src="./images/icons/ux-designer.svg" alt="">
                                                                     </span>
-                                                                    <span class="lead-text mb-1 mt-3">Ux designer</span>
-                                                                    <span class="sub-text">Prioritize and solve your tasks in short time cycles.</span>
+                                                                    <span class="lead-text mb-1 mt-3">Domestic</span>
+                                                                    <span class="sub-text">Class B.</span>
                                                                 </span>
                                                             </label>
                                                         </div>
                                                     </li>
-                                                    <li class="col-12">
+                                                    <li class="col-6">
                                                         <div class="custom-control custom-control-sm custom-radio pro-control custom-control-full">
                                                             <input type="radio" class="custom-control-input" name="sv2-preference" id="sv2-preference-freelance" value="sv2-preference-freelance" required>
                                                             <label class="custom-control-label" for="sv2-preference-freelance">
@@ -90,8 +90,22 @@
                                                                     <span class="icon-wrap xl">
                                                                         <img class="img" src="./images/icons/freelancing-service.svg" alt="">
                                                                     </span>
-                                                                    <span class="lead-text mb-1 mt-3">Freelancing Serivces</span>
-                                                                    <span class="sub-text">Prioritize and solve your tasks in short time cycles.</span>
+                                                                    <span class="lead-text mb-1 mt-3">Community</span>
+                                                                    <span class="sub-text">Class C</span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li class="col-6">
+                                                        <div class="custom-control custom-control-sm custom-radio pro-control custom-control-full">
+                                                            <input type="radio" class="custom-control-input" name="sv2-preference" id="sv2-preference-freelance" value="sv2-preference-freelance" required>
+                                                            <label class="custom-control-label" for="sv2-preference-freelance">
+                                                                <span class="d-flex flex-column text-center py-1 py-sm-2">
+                                                                    <span class="icon-wrap xl">
+                                                                        <img class="img" src="./images/icons/freelancing-service.svg" alt="">
+                                                                    </span>
+                                                                    <span class="lead-text mb-1 mt-3">Comercial</span>
+                                                                    <span class="sub-text">Class D</span>
                                                                 </span>
                                                             </label>
                                                         </div>
