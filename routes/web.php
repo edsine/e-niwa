@@ -24,6 +24,10 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/landing-2', function () {
+    return view('landing_2');
+});
+
 // Route::get('/', function () {
 //     return view('landing');
 // });
