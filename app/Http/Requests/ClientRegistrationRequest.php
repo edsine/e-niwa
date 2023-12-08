@@ -28,7 +28,7 @@ class ClientRegistrationRequest extends FormRequest
 
             'first_name' => 'required|string|max:100',
             'last_name' => 'required|string|max:100',
-            'email' => 'required|string|email|max:100',
+            'email' => 'required|unique:users,email|string|email|max:100',
             'password' => 'required|string|min:8|confirmed|max:255',
             'phone_number' => 'required|string|max:100',
             'street' => 'required|string|max:255',

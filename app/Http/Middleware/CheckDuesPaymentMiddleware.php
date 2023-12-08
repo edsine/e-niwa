@@ -18,9 +18,9 @@ class CheckDuesPaymentMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $user = Auth::user();
-        $user_profile = UserProfile::where('user_id', $user->id);
+        $user_profile = UserProfile::where('user_id', $user->id)->first();
 
-        if (!$user->hasRole('client')) {
+        if (!$user->hasRole('Client')) {
             return $next($request);
         }
 

@@ -572,6 +572,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('user-profiles', App\Http\Controllers\UserProfileController::class)->middleware('auth');
 Route::resource('registered-vessels', App\Http\Controllers\RegisteredVesselsController::class)->middleware('auth');
 Route::resource('payments', App\Http\Controllers\PaymentController::class);
+Route::post('update-profile-after-payment', [App\Http\Controllers\PaymentController::class, 'updateProfileAfterPayment'])->name('payments.update_profile_after_payment');
 Route::resource('applications', App\Http\Controllers\ApplicationController::class);
 
 

@@ -44,7 +44,7 @@ class UserProfile extends Model
         'first_name' => 'required|string|max:255',
         'last_name' => 'required|string|max:255',
         'other_name' => 'nullable|string|max:255',
-        'email' => 'required|string|max:255',
+        'email' => 'required||unique:user_profiles,email|string|max:255',
         'phone_number' => 'required|string|max:255',
         'street' => 'required|string|max:255',
         'state' => 'required|string|max:255',

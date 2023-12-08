@@ -131,8 +131,27 @@ class PaymentController extends AppBaseController
     public function duesPayment(Request $request)
     {
         $user = Auth::user();
-        $user_profile = UserProfile::where('user_id', $user->id);
-        
+        $user_profile = UserProfile::where('user_id', $user->id)->first();
+
         return view('payments.dues_payment', compact('user_profile'));
+    }
+
+    public function updateProfileAfterPayment(Request $request)
+    {
+        $input = $request->all();
+
+        //TODO: Get transaction ID from input and add to transactions table
+
+        try {
+            $user = Auth::user();
+            $user_profile = UserProfile::where('user_id', $user->id)->first();
+
+            $user_profile->is_first_time_dues_paid = 1;
+            $user_profile->save();
+
+            return response()->json(['message' => 'Request successful']);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Payment was successful but an error occured updating profile. Please go to transaction logs to verify payment']);
+        }
     }
 }
