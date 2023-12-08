@@ -87,9 +87,11 @@ Route::group(['prefix' => 'authentications'], function () {
     // });
 });
 
+Route::get('applicant-dues-payment', [App\Http\Controllers\PaymentController::class, 'duesPayment'])->name('payment.dues_payment')->middleware('auth');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'first_time_payment'])->group(function () {
     // Authenticated routes here
+
     Route::group(['prefix' => 'dashboards'], function () {
         Route::get('documentation-reports', function () {
             return view('dashboards.documentation-reports');
@@ -567,3 +569,6 @@ Route::resource('user-profiles', App\Http\Controllers\UserProfileController::cla
 Route::resource('registered-vessels', App\Http\Controllers\RegisteredVesselsController::class)->middleware('auth');
 Route::resource('payments', App\Http\Controllers\PaymentController::class);
 Route::resource('applications', App\Http\Controllers\ApplicationController::class);
+
+
+Route::post('client-registration', [App\Http\Controllers\UserProfileController::class, 'client_registration'])->name('client_registration');

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use App\Models\UserProfile;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Repositories\PaymentRepository;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreatePaymentRequest;
 use App\Http\Requests\UpdatePaymentRequest;
-use App\Http\Controllers\AppBaseController;
-use App\Repositories\PaymentRepository;
-use Illuminate\Http\Request;
-use Flash;
 
 class PaymentController extends AppBaseController
 {
@@ -124,5 +126,13 @@ class PaymentController extends AppBaseController
         Flash::success('Payment deleted successfully.');
 
         return redirect(route('payments.index'));
+    }
+
+    public function duesPayment(Request $request)
+    {
+        $user = Auth::user();
+        $user_profile = UserProfile::where('user_id', $user->id);
+        
+        return view('payments.dues_payment', compact('user_profile'));
     }
 }

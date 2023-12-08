@@ -17,7 +17,15 @@ class UserProfile extends Model
         'phone_number',
         'street',
         'state',
-        'lga'
+        'lga',
+        'applicant_class',
+        'application_type',
+        'office_close_by',
+        'city',
+        'country',
+        'alternate_phone_number',
+        'date_of_birth',
+        'is_first_time_dues_paid'
     ];
 
     protected $casts = [
