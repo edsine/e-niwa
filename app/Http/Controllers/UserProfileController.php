@@ -136,13 +136,14 @@ class UserProfileController extends AppBaseController
 
         // User Table Details
         $input_user['name'] = $input['first_name'] . ' ' . $input['last_name'];
+        $input_user['email'] = $input['email'];
         $input_user['password'] = bcrypt($input['password']);
 
         $user = User::create($input_user);
 
         Auth::login($user);
 
-        $role = Role::where('name', 'client');
+        $role = Role::where('name', 'Client')->first();
 
         $user->assignRole($role);
 

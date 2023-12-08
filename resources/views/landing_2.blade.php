@@ -62,6 +62,7 @@
                         </div><!-- .nk-split-content -->
                         <div
                             class="nk-split-content nk-split-stretch bg-white p-5 d-flex justify-center align-center flex-column">
+                            @include('adminlte-templates::common.errors')
                             <div class="wide-xs-fix">
                                 <form class="nk-stepper stepper-init is-alter myFormClass" method="POST"
                                     action="{{ route('client_registration') }}" id="stepper-survey-v2">
@@ -285,11 +286,11 @@
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
-                                                            <label class="form-label" for="email_address">Email
+                                                            <label class="form-label" for="email">Email
                                                                 Address</label>
                                                             <div class="form-control-wrap">
                                                                 <input type="text" class="form-control"
-                                                                    id="email_address" name="email_address"
+                                                                    id="email" name="email"
                                                                     placeholder="Email Address" required>
                                                             </div>
                                                         </div>
@@ -468,7 +469,7 @@
         const submitButton = myForm.querySelector('button[type="submit"]');
 
         submitButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default form submission on button click  
+            event.preventDefault(); // Prevent default form submission on button click
             myForm.submit(); // Forcefully submit the form
         });
 
