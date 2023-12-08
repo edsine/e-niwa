@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateUserProfileRequest;
-use App\Http\Requests\UpdateUserProfileRequest;
+use Flash;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\UserProfileRepository;
-use Illuminate\Http\Request;
-use Flash;
+use App\Http\Requests\CreateUserProfileRequest;
+use App\Http\Requests\UpdateUserProfileRequest;
+use App\Http\Requests\ClientRegistrationRequest;
 
 class UserProfileController extends AppBaseController
 {
@@ -124,5 +128,32 @@ class UserProfileController extends AppBaseController
         Flash::success('User Profile deleted successfully.');
 
         return redirect(route('user-profiles.index'));
+    }
+
+    public function clientRegistration(ClientRegistrationRequest $request)
+    {
+        $input = $request->all();
+
+        // User Table Details
+        $input_user['name'] = $input['first_name'] . ' ' . $input['last_name'];
+        $input_user['password'] = bcrypt($input['password']);
+
+        $user = User::create($input_user);
+
+        Auth::login($user);
+
+        $role = Role::where('name', 'client');
+
+        $user->assignRole($role);
+
+        unset($input['password'], $input['password_confirmation']);
+
+        $input['user_id'] = $user->id;
+
+        $userProfile = $this->userProfileRepository->create($input);
+
+        Flash::success('User Profile successfully created.');
+
+        return redirect(route('payment.dues_payment'));
     }
 }
