@@ -106,23 +106,24 @@
                                 <div class="owl-carousel owl-theme">
                                     <div class="item">
                                         <i class="lar la-grin-alt font-45 text-white"></i>
-                                        <h2 class="font-30 text-white mt-2">{{ __('Start your journey') }}</h2>
+                                        <h2 class="font-30 text-white mt-2">{{ __('Welcome to ENIWA') }}</h2>
                                         <p class="summary-count text-white font-12 mt-2 slide-text">
-                                            {{ __('Everyone has been made for some particular work, and the desire for that work has been put in every heart') }}
+                                            {{ __('ENIWA is the Electronic Register Information System of the National Inland Waterways Authority (NIWA) in Nigeria. It is a platform for vessel e-registration and management.') }}
                                         </p>
                                     </div>
                                     <div class="item">
                                         <i class="lar la-clock font-45 text-white"></i>
-                                        <h2 class="font-30 text-white mt-2">{{ __('Save your time') }}</h2>
+                                        <h2 class="font-30 text-white mt-2">{{ __('
+                                            Simplify Your Vessel Registration with ENIWA') }}</h2>
                                         <p class="summary-count text-white font-12 mt-2 slide-text">
-                                            {{ __('Everyone has been made for some particular work, and the desire for that work has been put in every heart') }}
+                                            {{ __('Experience faster processing, reduced paperwork, and enhanced security when you register your vessel with ENIWA. Enjoy improved transparency, accountability, and valuable features like vessel tracking and reporting.') }}
                                         </p>
                                     </div>
                                     <div class="item">
                                         <i class="las la-hand-holding-usd font-45 text-white"></i>
-                                        <h2 class="font-30 text-white mt-2">{{ __('Log') }}Save your money</h2>
+                                        <h2 class="font-30 text-white mt-2">{{ __('') }}Register Your Vessel with ENIWA: Quick & Easy</h2>
                                         <p class="summary-count text-white font-12 mt-2 slide-text">
-                                            {{ __('Everyone has been made for some particular work, and the desire for that work has been put in every heart') }}
+                                            {{ __('Create an account, fill out the online application, and upload required documents. Its that simple to experience a modern and efficient vessel registration system with ENIWA.') }}
                                         </p>
                                     </div>
                                 </div>

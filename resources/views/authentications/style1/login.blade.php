@@ -165,13 +165,12 @@
                                         <div class="nk-feature nk-feature-center">
                                             <div class="nk-feature-img">
                                                 <img class="round"
-                                                    src="{{ asset('assets/frontend/images/slides/promo-a.png') }}"
+                                                    src="{{ asset('assets/images/sliders/nigw.jpeg') }}"
                                                     {{-- srcset="{{ asset('images/slides/promo-a2x.png') }} 2x" --}} alt="">
                                             </div>
                                             <div class="nk-feature-content py-4 p-sm-5">
                                                 <h4>E-NIWA</h4>
-                                                <p>You can start to create your products easily with its user-friendly
-                                                    design & most completed responsive layout.</p>
+                                                <p>ENIWA is the Electronic Register Information System of the National Inland Waterways Authority (NIWA) in Nigeria. It is a platform for vessel e-registration and management.</p>
                                             </div>
                                         </div>
                                     </div><!-- .slider-item -->
@@ -179,13 +178,16 @@
                                         <div class="nk-feature nk-feature-center">
                                             <div class="nk-feature-img">
                                                 <img class="round"
-                                                    src="{{ asset('assets/frontend/images/slides/promo-b.png') }}"
-                                                    srcset="./images/slides/promo-b2x.png 2x" alt="">
+                                                    src="{{ asset('assets/images/sliders/inl.jpg') }}"
+                                                     alt="">
                                             </div>
                                             <div class="nk-feature-content py-4 p-sm-5">
-                                                <h4>E-NIWA</h4>
-                                                <p>You can start to create your products easily with its user-friendly
-                                                    design & most completed responsive layout.</p>
+                                                <h4>How to use ENIWA
+
+                                                </h4>
+                                                <p>To use ENIWA, simply create an account and register your vessel. You can then access a variety of features, including: Track vessel movements
+,View your vessel registration details
+</p>
                                             </div>
                                         </div>
                                     </div><!-- .slider-item -->
@@ -193,13 +195,12 @@
                                         <div class="nk-feature nk-feature-center">
                                             <div class="nk-feature-img">
                                                 <img class="round"
-                                                    src="{{ asset('assets/frontend/images/slides/promo-c.png') }}"
-                                                    srcset="./images/slides/promo-c2x.png 2x" alt="">
+                                                    src="{{ asset('assets/images/sliders/dsh.png') }}"
+                                                   alt="">
                                             </div>
                                             <div class="nk-feature-content py-4 p-sm-5">
-                                                <h4>E-NIWA</h4>
-                                                <p>You can start to create your products easily with its user-friendly
-                                                    design & most completed responsive layout.</p>
+                                                <h4>ENIWA: The future of vessel registration and management in Nigeria</h4>
+                                                <p>ENIWA is a modern and innovative platform that is transforming the way vessel registration and management is done in Nigeria. By providing a fast, efficient, and transparent system,</p>
                                             </div>
                                         </div>
                                     </div><!-- .slider-item -->

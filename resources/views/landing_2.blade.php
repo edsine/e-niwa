@@ -14,6 +14,21 @@
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/theme.css?ver=3.2.2') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/dashlite.css?ver=3.2.2') }}">
+    <style>
+        .preview-circle {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-top: 10px;
+        }
+    
+        .preview-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      </style>
 </head>
 
 <body class="nk-body npc-default pg-survey">
@@ -112,7 +127,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="nk-stepper-step">
+                                            {{-- <div class="nk-stepper-step">
                                                 <div class="nk-stepper-step-head mb-4">
                                                     <h5 class="title">How much time you work ?</h5>
                                                     <p>Tation argumentum et usu, dicit viderer evertitur te has</p>
@@ -145,35 +160,63 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="nk-stepper-step">
                                                 <div class="nk-stepper-step-head mb-4">
-                                                    <h5 class="title">what are your expected benefits ?</h5>
-                                                    <p>Tation argumentum et usu, dicit viderer evertitur te has</p>
+                                                    <h5 class="title">what are you applying for.?</h5>
+                                                  
                                                 </div>
                                                 <div class="row g-4">
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <label class="form-label" for="sv2-select-position">Select Position</label>
+                                                            <label class="form-label" for="sv2-select-position">Select</label>
                                                             <div class="form-control-wrap">
-                                                                <select class="form-select js-select2" id="sv2-select-position" name="sv2-select-position" data-placeholder="Select Position" required>
+                                                                <select class="form-select js-select2" id="sv2-select-position" name="sv2-select-position" data-placeholder="click to select" required>
                                                                     <option value=""></option>
-                                                                    <option value="junior-developer">Junior Developer</option>
-                                                                    <option value="mid-level-developer">Mid Level Developer</option>
-                                                                    <option value="senior-level-developer">Senior Developer</option>
+                                                                    <option value="right-of-way">Use of Right of Way</option>
+                                                                    <option value="dredging-access-charge">Dredging Access Charge/Reclamation</option>
+                                                                    <option value="waterway-operators-training">Training and Certification of Waterway Operators</option>
+                                                                    <option value="issue-control-licenses">Issue and Control Licenses for Inland Navigation, Piers, Jetties, Dockyards</option>
+                                                                    <option value="grant-licenses">Grant Licenses to Private Inland Waterway Operators</option>
+                                                                    <option value="ferry-services">Ferry Services within the Inland Waterways System</option>
                                                                 </select>
                                                             </div>
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <label class="form-label" for="sv1-asking-salary">Asking Salary (monthly)</label>
+                                                            <label class="form-label" for="sv2-select-position">Area Offices Close to you</label>
                                                             <div class="form-control-wrap">
-                                                                <input type="text" class="form-control" id="sv1-asking-salary" name="sv1-asking-salary" placeholder="eg:$1200" required>
+                                                                <select class="form-select js-select2" id="sv2-select-position" name="sv2-select-position" data-placeholder="click to select" required>
+                                                                    <option value=""></option>
+                                                                   
+                                                                    <option value="lagos">Lagos (Lagos AO)</option>
+                                                                    <option value="benue">Benue (Makurdi AO)</option>
+                                                                    <option value="kebbi">Kebbi (Yelwa AO)</option>
+                                                                    <option value="adamawa">Adamawa (Yola AO)</option>
+                                                                    <option value="niger">Niger (Baro Port, Minna AO)</option>
+                                                                    <option value="bayelsa">Bayelsa (Yenagoa AO)</option>
+                                                                    <option value="kano">Kano</option>
+                                                                    <option value="rivers">Rivers (Port Harcourt AO)</option>
+                                                                    <option value="anambra">Anambra (Onitsha AO/RP)</option>
+                                                                    <option value="ogun">Ogun (Abeokuta AO)</option>
+                                                                    <option value="cross-river">Cross River (Calabar AO)</option>
+                                                                    <option value="sokoto">Sokoto (Sokoto AO)</option>
+                                                                    <option value="taraba">Taraba (Jalingo AO)</option>
+                                                                    <option value="kogi">Kogi (Lokoja AO)</option>
+                                                                    <option value="delta">Delta (Warri AO)</option>
+                                                                    <option value="kaduna">Kaduna (Kaduna AO)</option>
+                                                                    <option value="akwa-ibom">Akwa Ibom (Eket AO)</option>
+                                                                    <option value="imo">Imo (Oguta AO)</option>
+                                                                    <option value="ondo">Ondo (Igbokoda AO)</option>
+                                                                </select>
                                                             </div>
+                                                            
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
+                                                  
+                                                    {{-- <div class="col-12">
                                                         <div class="form-group">
                                                             <label class="form-label">Workplace preference ? </label>
                                                             <div class="form-control-wrap">
@@ -193,18 +236,18 @@
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
                                             <div class="nk-stepper-step">
                                                 <div class="nk-stepper-step-head mb-4">
-                                                    <h5 class="title">Lets learn about yourself</h5>
+                                                    <h5 class="title">Personal Info</h5>
                                                     <p>Tation argumentum et usu, dicit viderer evertitur te has</p>
                                                 </div>
                                                 <div class="row g-3">
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
-                                                            <label class="form-label" for="sv1-first-name">First Name</label>
+                                                            <label class="form-label" for="sv1-first-name">Legal Surname</label>
                                                             <div class="form-control-wrap">
                                                                 <input type="text" class="form-control" id="sv1-first-name" name="sv1-first-name" placeholder="First name" required>
                                                             </div>
@@ -212,7 +255,15 @@
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
-                                                            <label class="form-label" for="sv1-last-name">Last Name</label>
+                                                            <label class="form-label" for="sv1-last-name">Middle Name</label>
+                                                            <div class="form-control-wrap">
+                                                                <input type="text" class="form-control" id="sv1-last-name" name="sv1-last-name" placeholder="Last name" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="sv1-last-name">First of Given Name</label>
                                                             <div class="form-control-wrap">
                                                                 <input type="text" class="form-control" id="sv1-last-name" name="sv1-last-name" placeholder="Last name" required>
                                                             </div>
@@ -226,7 +277,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
+                                                    {{-- <div class="col-12">
                                                         <div class="form-group">
                                                             <label class="form-label">Gender </label>
                                                             <div class="form-control-wrap">
@@ -246,20 +297,98 @@
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <label class="form-label">Upload Documents</label>
-                                                            <span class="form-note mb-2">( Files accepted: .pdf. doc/docx - Max file size: 190k for demo limit )</span>
+                                                          <label class="form-label">Upload Your Letter of Intent</label>
+                                                          <span class="form-note mb-2">(Files accepted: .pdf. doc/docx - Max file size: 190k for demo limit)</span>
+                                                          <div class="form-control-wrap">
+                                                            <div class="form-file">
+                                                              <input type="file" multiple class="form-file-input" id="sv2-file-attachment" onchange="previewPassportImage()">
+                                                              <label class="form-file-label" for="sv2-file-attachment">Choose files....</label>
+                                                            </div>
+                                                            <div class="preview-circle" id="file-preview"></div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="nk-stepper-step">
+                                                <div class="nk-stepper-step-head mb-4">
+                                                    <h5 class="title">Permanent Physical Mailing Address</h5>
+                                                    {{-- <p>Tation argumentum et usu, dicit viderer evertitur te has</p> --}}
+                                                </div>
+                                               
+
+
+                                                <div class="row g-3">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="sv1-last-name">Street & Number</label>
                                                             <div class="form-control-wrap">
-                                                                <div class="form-file">
-                                                                    <input type="file" multiple class="form-file-input" id="sv2-file-attachment">
-                                                                    <label class="form-file-label" for="sv2-file-attachment">Choose files....</label>
-                                                                </div>
+                                                                <input type="text" class="form-control" id="sv1-last-name" name="sv1-last-name" placeholder="Street no/address" required>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="sv1-first-name"> City</label>
+                                                            <div class="form-control-wrap">
+                                                                <input type="text" class="form-control" id="sv1-first-name" name="sv1-first-name" placeholder="City" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="sv1-last-name"> L.G.A</label>
+                                                            <div class="form-control-wrap">
+                                                                <input type="text" class="form-control" id="sv1-last-name" name="sv1-last-name" placeholder="Local governmaent Area" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="sv1-first-name">State</label>
+                                                            <div class="form-control-wrap">
+                                                                <input type="text" class="form-control" id="sv1-first-name" name="sv1-first-name" placeholder="State" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="sv1-last-name">Country</label>
+                                                            <div class="form-control-wrap">
+                                                                <input type="text" class="form-control" id="sv1-last-name" name="sv1-last-name" placeholder="Country" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="sv1-first-name">Telephone</label>
+                                                            <div class="form-control-wrap">
+                                                                <input type="text" class="form-control" id="sv1-first-name" name="sv1-first-name" placeholder="Phone number" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="sv1-last-name">  Alternative Phone No</label>
+                                                            <div class="form-control-wrap">
+                                                                <input type="text" class="form-control" id="sv1-last-name" name="sv1-last-name" placeholder="Alternate number" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="sv1-last-name">Date of birth</label>
+                                                            <div class="form-control-wrap">
+                                                                <input type="date" class="form-control" id="sv1-last-name" name="sv1-last-name" placeholder="Last name" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+
+
                                             </div>
                                         </div>
                                         <ul class="nk-stepper-pagination pt-4 gx-4 gy-2 stepper-pagination">
@@ -281,6 +410,46 @@
     </div>
     <!-- app-root @e -->
     <!-- JavaScript -->
+    <script>
+        function previewFile() {
+            var input = document.getElementById('sv2-file-attachment');
+            var preview = document.getElementById('file-preview');
+    
+            // Clear previous preview
+            preview.innerHTML = '';
+    
+            // Check if any file is selected
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+    
+                reader.onload = function (e) {
+                    var fileType = input.files[0].type;
+    
+                    // Check if the file type is supported (you can add more types if needed)
+                    if (fileType === 'application/pdf' || fileType === 'application/msword' || fileType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || fileType === 'application/vnd.apple.pages') {
+                        if (fileType === 'application/pdf') {
+                            // Handle PDF preview (you can use a PDF.js library for this)
+                            // For simplicity, let's just display a message here
+                            preview.innerHTML = 'PDF file preview is not implemented';
+                        } else {
+                            // Create an image element and set the source to the preview
+                            var image = document.createElement('img');
+                            image.src = e.target.result;
+    
+                            // Append the image to the preview div
+                            preview.appendChild(image);
+                        }
+                    } else {
+                        preview.innerHTML = 'Unsupported file type';
+                    }
+                };
+    
+                // Read the file as a data URL
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    
     <script src="{{ asset('assets/frontend/js/bundle.js?ver=3.2.2') }}"></script>
     <script src="{{ asset('assets/frontend/js/scripts.js?ver=3.2.2') }}"></script>
     <script src="{{ asset('assets/frontend/js/libs/tagify.js?ver=3.2.2') }}"></script>
