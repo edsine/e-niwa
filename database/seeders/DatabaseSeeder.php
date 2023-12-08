@@ -12,12 +12,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
+        // \App\Models\User::factory(10)->create();
 
-        \App\Models\User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@niwa.com',
-            'password' => bcrypt('123456'),
-        ]);
+        // \App\Models\User::factory()->create([
+        //     'name' => 'admin',
+        //     'email' => 'admin@niwa.com',
+        //     'password' => bcrypt('123456'),
+        // ]);
+
+        $this->call(RolesTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }
