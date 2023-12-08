@@ -24,14 +24,14 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/landing', function () {
-    return view('landing');
-});
-
-
 Route::get('/', function () {
-    return view('authentications.style1.login');
+    return view('landing_2');
 });
+
+
+// Route::get('/', function () {
+//     return view('authentications.style1.login');
+// });
 
 Route::group(['prefix' => 'authentications'], function () {
     Route::group(['prefix' => 'style1'], function () {
