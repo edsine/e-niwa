@@ -28,6 +28,10 @@ Route::get('/', function () {
     return view('landing_2');
 });
 
+Route::get('/payment', function () {
+    return view('payments/dues_payment_sample');
+});
+
 
 // Route::get('/', function () {
 //     return view('authentications.style1.login');
@@ -571,4 +575,4 @@ Route::resource('payments', App\Http\Controllers\PaymentController::class);
 Route::resource('applications', App\Http\Controllers\ApplicationController::class);
 
 
-Route::post('client-registration', [App\Http\Controllers\UserProfileController::class, 'client_registration'])->name('client_registration');
+Route::post('client-registration', [App\Http\Controllers\UserProfileController::class, 'clientRegistration'])->name('client_registration');

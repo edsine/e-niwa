@@ -63,7 +63,7 @@
                         <div
                             class="nk-split-content nk-split-stretch bg-white p-5 d-flex justify-center align-center flex-column">
                             <div class="wide-xs-fix">
-                                <form class="nk-stepper stepper-init is-alter" method="POST"
+                                <form class="nk-stepper stepper-init is-alter myFormClass" method="POST"
                                     action="{{ route('client_registration') }}" id="stepper-survey-v2">
                                     @csrf
                                     <div class="nk-stepper-content">
@@ -166,40 +166,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            {{-- <div class="nk-stepper-step">
-                                                <div class="nk-stepper-step-head mb-4">
-                                                    <h5 class="title">How much time you work ?</h5>
-                                                    <p>Tation argumentum et usu, dicit viderer evertitur te has</p>
-                                                </div>
-                                                <div class="row g-4">
-                                                    <div class="col-12">
-                                                        <div class="form-group">
-                                                            <div class="form-control-wrap">
-                                                                <ul class="custom-control-group flex-column align-start">
-                                                                    <li>
-                                                                        <div class="custom-control custom-radio">
-                                                                            <input type="radio" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-full" required>
-                                                                            <label class="custom-control-label" for="sv2-time-avilability-full">Full time</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-radio">
-                                                                            <input type="radio" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-part" required>
-                                                                            <label class="custom-control-label" for="sv2-time-avilability-part">Part time</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-radio">
-                                                                            <input type="radio" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
-                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance">Freelance / Contract</label>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
+
                                             <div class="nk-stepper-step">
                                                 <div class="nk-stepper-step-head mb-4">
                                                     <h5 class="title">what are you applying for.?</h5>
@@ -275,27 +242,6 @@
                                                         </div>
                                                     </div>
 
-                                                    {{-- <div class="col-12">
-                                                        <div class="form-group">
-                                                            <label class="form-label">Workplace preference ? </label>
-                                                            <div class="form-control-wrap">
-                                                                <ul class="custom-control-group">
-                                                                    <li>
-                                                                        <div class="custom-control custom-radio">
-                                                                            <input type="radio" class="custom-control-input" name="sv2-work-place" id="sv2-work-place-office" value="in-ofice" required>
-                                                                            <label class="custom-control-label" for="sv2-work-place-office">In Office</label>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="custom-control custom-radio">
-                                                                            <input type="radio" class="custom-control-input" name="sv2-work-place" id="sv2-work-place-remote" value="remote-home" required>
-                                                                            <label class="custom-control-label" for="sv2-work-place-remote">Remote / Home office</label>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div> --}}
                                                 </div>
                                             </div>
                                             <div class="nk-stepper-step">
@@ -360,10 +306,12 @@
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
-                                                            <label class="form-label" for="password_confirmation">Confirm Password</label>
+                                                            <label class="form-label"
+                                                                for="password_confirmation">Confirm Password</label>
                                                             <div class="form-control-wrap">
-                                                                <input type="password_confirmation" class="form-control"
-                                                                    id="password_confirmation" name="password_confirmation"
+                                                                <input type="password" class="form-control"
+                                                                    id="password_confirmation"
+                                                                    name="password_confirmation"
                                                                     placeholder="Confirm Password" required>
                                                             </div>
                                                         </div>
@@ -491,10 +439,12 @@
                                                 </div>
                                             </div>
                                             <ul class="nk-stepper-pagination pt-4 gx-4 gy-2 stepper-pagination">
-                                                <li class="step-prev"><button
-                                                        class="btn btn-dim btn-primary">Back</button></li>
-                                                <li class="step-next"><button
-                                                        class="btn btn-primary">Continue</button></li>
+                                                <li class="step-prev">
+                                                    <button class="btn btn-dim btn-primary">Back</button>
+                                                </li>
+                                                <li class="step-next">
+                                                    <button class="btn btn-primary">Continue</button>
+                                                </li>
                                                 <li class="step-submit">
                                                     <button type="submit" class="btn btn-primary">Submit</button>
                                                 </li>
@@ -514,6 +464,14 @@
     <!-- app-root @e -->
     <!-- JavaScript -->
     <script>
+        const myForm = document.querySelector('.myFormClass');
+        const submitButton = myForm.querySelector('button[type="submit"]');
+
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission on button click  
+            myForm.submit(); // Forcefully submit the form
+        });
+
         function previewFile() {
             var input = document.getElementById('sv2-file-attachment');
             var preview = document.getElementById('file-preview');
@@ -557,6 +515,6 @@
 
     <script src="{{ asset('assets/frontend/js/bundle.js?ver=3.2.2') }}"></script>
     <script src="{{ asset('assets/frontend/js/scripts.js?ver=3.2.2') }}"></script>
-    <script src="{{ asset('assets/frontend/js/libs/tagify.js?ver=3.2.2') }}"></script>
+    {{-- <script src="{{ asset('assets/frontend/js/libs/tagify.js?ver=3.2.2') }}"></script> --}}
 
 </html>
