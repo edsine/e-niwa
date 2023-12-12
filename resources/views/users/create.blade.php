@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                    Create User Profiles
+                    Create User
                     </h1>
                 </div>
             </div>
@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'user-profiles.store']) !!}
+            {!! Form::open(['route' => 'users.store']) !!}
 
             <div class="card-body">
 
@@ -31,7 +31,7 @@
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('user-profiles.index') }}" class="btn btn-default"> Cancel </a>
+                <a href="{{ route('users.index') }}" class="btn btn-default"> Cancel </a>
             </div>
 
             {!! Form::close() !!}
