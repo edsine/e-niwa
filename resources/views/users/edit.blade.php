@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                    Create User
+                        Edit User
                     </h1>
                 </div>
             </div>
@@ -19,14 +19,12 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'user-profiles.store']) !!}
+            {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
-
                 <div class="row">
                     @include('users.fields')
                 </div>
-
             </div>
 
             <div class="card-footer">

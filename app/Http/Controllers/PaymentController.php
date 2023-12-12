@@ -128,12 +128,16 @@ class PaymentController extends AppBaseController
         return redirect(route('payments.index'));
     }
 
-    public function duesPayment(Request $request)
+    public function firstDuesPayment(Request $request)
     {
         $user = Auth::user();
         $user_profile = UserProfile::where('user_id', $user->id)->first();
 
-        return view('payments.dues_payment', compact('user_profile'));
+        if($user_profile->is_first_time_dues_paid == 1) {
+            return redirect()->route('/');
+        }
+
+        return view('payments.first_dues_payment', compact('user_profile'));
     }
 
     public function updateProfileAfterPayment(Request $request)
@@ -149,7 +153,7 @@ class PaymentController extends AppBaseController
             $user_profile->is_first_time_dues_paid = 1;
             $user_profile->save();
 
-            return response()->json(['message' => 'Request successful']);
+            return response()->json(['success' => true, 'message' => 'Request successful']);
         } catch (\Throwable $th) {
             return response()->json(['message' => 'Payment was successful but an error occured updating profile. Please go to transaction logs to verify payment']);
         }

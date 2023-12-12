@@ -25,7 +25,7 @@ class CheckDuesPaymentMiddleware
         }
 
         if ($user_profile->is_first_time_dues_paid == 0) {
-            return redirect()->route('payment.dues_payment');
+            return redirect()->route('payment.first_dues_payment');
         }
 
         return $next($request);
