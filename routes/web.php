@@ -24,6 +24,10 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/data-tables', function () {
+    return view('users.data-tables');
+});
+
 Route::get('/', function () {
     return view('dashboard.dashboard4');
 })->middleware(['auth', 'first_time_payment'])->name('/');
@@ -432,9 +436,9 @@ Route::middleware(['auth', 'first_time_payment'])->group(function () {
         return view('tables');
     });
 
-    Route::get('data-tables', function () {
-        return view('data-tables');
-    });
+    // Route::get('data-tables', function () {
+    //     return view('data-tables');
+    // });
 
     Route::group(['prefix' => 'forms'], function () {
         Route::group(['prefix' => 'controls'], function () {
