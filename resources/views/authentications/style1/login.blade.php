@@ -97,7 +97,7 @@
                                         <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
                                     </div>
                                 </form><!-- form -->
-                                <div class="form-note-s2 pt-4"> New on our platform? <a class="link-primary" href="{{ url('/authentications/style1/signup') }}">Create an account</a>
+                                <div class="form-note-s2 pt-4"> New on our platform? <a class="link-primary" href="{{ url('/client-registration') }}">Create an account</a>
                                 </div>
                             </div><!-- .nk-block -->
                             <div class="nk-block nk-auth-footer">

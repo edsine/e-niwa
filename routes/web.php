@@ -25,17 +25,17 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/', function () {
-    return view('landing_2');
-});
+    return view('dashboard.dashboard4');
+})->middleware(['auth', 'first_time_payment'])->name('/');
+
+Route::get('/client-registration', function () {
+    return view('client_registration');
+})->middleware(['auth', 'first_time_payment']);
 
 Route::get('/payment', function () {
     return view('payments/dues_payment_sample');
 });
 
-
-// Route::get('/', function () {
-//     return view('authentications.style1.login');
-// });
 
 Route::group(['prefix' => 'authentications'], function () {
     Route::group(['prefix' => 'style1'], function () {
@@ -91,7 +91,7 @@ Route::group(['prefix' => 'authentications'], function () {
     // });
 });
 
-Route::get('applicant-dues-payment', [App\Http\Controllers\PaymentController::class, 'duesPayment'])->name('payment.dues_payment')->middleware('auth');
+Route::get('applicant-dues-payment', [App\Http\Controllers\PaymentController::class, 'firstDuesPayment'])->name('payment.first_dues_payment')->middleware(['auth']);
 
 Route::middleware(['auth', 'first_time_payment'])->group(function () {
     // Authenticated routes here
@@ -108,9 +108,9 @@ Route::middleware(['auth', 'first_time_payment'])->group(function () {
         });
     });
 
-    Route::get('/landing-2', function () {
-        return view('landing_2');
-    });
+    // Route::get('/landing-2', function () {
+    //     return view('landing_2');
+    // });
 
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('dashboard1', function () {
@@ -565,10 +565,7 @@ Route::middleware(['auth', 'first_time_payment'])->group(function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::resource('userProfiles', App\Http\Controllers\UserProfileController::class)->middleware('auth');
-// Route::resource('registeredVessels', App\Http\Controllers\Registered_VesselsController::class);
-
-
+Route::resource('users', App\Http\Controllers\UserController::class)->middleware('auth');
 Route::resource('user-profiles', App\Http\Controllers\UserProfileController::class)->middleware('auth');
 Route::resource('registered-vessels', App\Http\Controllers\RegisteredVesselsController::class)->middleware('auth');
 Route::resource('payments', App\Http\Controllers\PaymentController::class);
