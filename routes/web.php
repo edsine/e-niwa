@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UnitController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\UserProfilesController;
 
 /*
@@ -574,3 +576,9 @@ Route::resource('applications', App\Http\Controllers\ApplicationController::clas
 
 
 Route::post('client-registration', [App\Http\Controllers\UserProfileController::class, 'clientRegistration'])->name('client_registration');
+
+Route::resource('departments', DepartmentController::class);
+
+Route::resource('units', App\Http\Controllers\UnitController::class);
+Route::resource('unit-heads', App\Http\Controllers\UnitHeadController::class);
+Route::resource('departmentheads', App\Http\Controllers\DepartmentheadController::class);
