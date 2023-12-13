@@ -30,13 +30,13 @@ Route::get('/data-tables', function () {
     return view('users.data-tables');
 });
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('dashboard.dashboard4');
-})->middleware(['auth', 'first_time_payment'])->name('/');
-
-Route::get('/client-registration', function () {
-    return view('client_registration');
 })->middleware(['auth', 'first_time_payment']);
+
+Route::get('/', function () {
+    return view('client_registration');
+})->name('/');
 
 Route::get('/payment', function () {
     return view('payments/dues_payment_sample');
