@@ -14,8 +14,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {
-        if (User::count() == 0) {
-            $user = new User();
+        $user = new User();
+        if (User::count() == 0) {  
             $user->name = 'Admin';
             $user->email = 'admin@niwa.com';
             $user->password = bcrypt('123456');
