@@ -87,6 +87,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('documentation-reports', function () {
             return view('dashboards.documentation-reports');
         });
+        Route::get('dredging-activities', function () {
+            return view('dashboards.dredging-activities');
+        });
+        Route::get('map', function () {
+            return view('dashboards.map');
+        });
     });
 
     // Authenticated routes here
