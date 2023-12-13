@@ -50,13 +50,17 @@
                                     alt="logo-dark">
                             </a>
                             <div class="text-block wide-xs mx-auto">
-                                <h3 class="text-white">Get Started</h3>
+                                <h3 class="text-white mt-1">Get Started</h3>
                                 <p>We issue licenses for inland navigation, piers, jetties and dockyards; examine and
                                     survey inland watercraft and shipyard operators, grant permit and licenses for sand
                                     dredging, pipeline construction, dredging of slot and approve designs and
                                     construction of inland river crafts</p>
                                 <img class="nk-survey-gfx mt-5"
                                     src="{{ asset('assets/frontend/images/gfx/job-survey.svg') }}" alt="">
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <p>Already registered ? <a href="{{ url('login') }}"
+                                        class="btn btn-success float-right">Login</a></p>
                             </div>
                             <p>&copy; 2023 NIWA.</p>
                         </div><!-- .nk-split-content -->
