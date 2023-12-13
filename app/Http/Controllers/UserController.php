@@ -144,6 +144,12 @@ class UserController extends AppBaseController
             return redirect(route('users.index'));
         }
 
+        if (!empty($input['password'])) {
+            $input['password'] = Hash::make($input['password']);
+        } else {
+            unset($input['password']);
+        }
+
         $user->fill($input);
         $user->save();
 

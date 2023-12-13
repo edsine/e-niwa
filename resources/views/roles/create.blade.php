@@ -24,8 +24,8 @@
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0);"> {{ __('Dashboard') }}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span> {{ __('Users') }}</span>
-                                    <li class="breadcrumb-item active" aria-current="page"><span> {{ __('Edit') }}</span>
+                                <li class="breadcrumb-item active" aria-current="page"><span> {{ __('Roles') }}</span>
+                                    <li class="breadcrumb-item active" aria-current="page"><span> {{ __('Create') }}</span>
                                 </li>
                             </ol>
                         </nav>
@@ -35,7 +35,7 @@
 
             <ul class="navbar-nav d-flex align-center ml-auto right-side-filter">
                 <li class="nav-item more-dropdown">
-                    <h6>Create User</h6>
+                    <h6>Create Role</h6>
                 </li>
             </ul>
         </header>
@@ -55,17 +55,17 @@
                                 <div class="widget-header">
                                     <div class="row">
                                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                            <h4>Form Validation</h4>
+                                            <h4>Create Role</h4>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="widget-content widget-content-area">
                                     <div class="form-group row">
                                         <div class="col-lg-12 col-md-12 col-sm-12">
-                                            {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch', 'class' => 'needs-validation was-validated']) !!}
-                                                @include('users.edit_fields')
+                                            {!! Form::open(['route' => 'roles.store', 'class' => 'needs-validation was-validated', 'action' => 'javascript:void(0);']) !!}
+                                                @include('roles.fields')
                                                 {!! Form::submit('Save', ['class' => 'float-right btn btn-primary mt-3']) !!}
-                                                <a class="float-right btn btn-default mr-3 mt-3" href="{{ route('users.index') }}" type="submit">Cancel</a>
+                                                <a class="float-right btn btn-default mr-3 mt-3" href="{{ route('roles.index') }}" type="submit">Cancel</a>
                                             {!! Form::close() !!}
                                         </div>
                                     </div>
