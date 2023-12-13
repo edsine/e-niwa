@@ -2,29 +2,23 @@
     <div class="widget-content widget-content-area br-6">
         <div class="card shadow">
             <div class="card-body">
-                <h4 class="table-header">{{ __('Users') }}</h4>
+                <h4 class="table-header">{{ __('Roles') }}</h4>
                 <div class="table-responsive mb-4">
                     <table id="user-profiles-table" id="dropdown-dt" class="table table-hover" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Role</th>
+                                <th>Guard Name</th>
                                 <th colspan="3">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @foreach ($roles as $role)
                                 <tr>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>
-                                        @foreach ($user->roles as $role)
-                                            <div class="badge badge-light fw-bold mb-3 mr-3">{{ $role->name }}</div>
-                                        @endforeach
-                                    </td>
+                                    <td>{{ $role->name }}</td>
+                                    <td>{{ $role->guard_name }}</td>
                                     <td style="width: 120px">
-                                        {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
+                                        {!! Form::open(['route' => ['roles.destroy', $role->id], 'method' => 'delete']) !!}
                                         <div class="dropdown custom-dropdown">
                                             <a class="dropdown-toggle font-20 text-primary" href="#"
                                                 role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -34,9 +28,7 @@
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1"
                                                 style="will-change: transform;">
                                                 <a class="dropdown-item"
-                                                    href="{{ route('users.edit', [$user->id]) }}">{{ __('Edit') }}</a>
-                                                {{-- <a class="dropdown-item"
-                                                    href="{{ route('users.show', [$user->id]) }}">{{ __('Show Details') }}</a> --}}
+                                                    href="{{ route('roles.edit', [$role->id]) }}">{{ __('Edit') }}</a>
                                                 {!! Form::button('Delete', [
                                                     'type' => 'submit',
                                                     'class' => 'dropdown-item',
@@ -55,7 +47,7 @@
 
                 <div class="card-footer clearfix">
                     <div class="float-right">
-                        @include('adminlte-templates::common.paginate', ['records' => $users])
+                        @include('adminlte-templates::common.paginate', ['records' => $roles])
                     </div>
                 </div>
             </div>

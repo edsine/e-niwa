@@ -43,5 +43,15 @@
                 </li>
             </ul>
         </li>
+
+        <li class="menu">
+            {{-- <a href="{{ route('users.index') }}" class="nav-link {{ Request::is('users*') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-home"></i>
+                <p>Users</p>
+            </a> --}}
+
+            <a data-active="{{ is_active_route(['users/*']) }}" href="{{ route('users.index') }}">
+                {{ __('Users') }} </a>
+        </li>
     </ul>
 </nav>
