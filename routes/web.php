@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UnitController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\UserProfilesController;
 
 /*
@@ -17,14 +20,28 @@ use App\Http\Controllers\UserProfilesController;
 
 Auth::routes();
 
-Route::get('/', function () {
+// Route::get('/landing', [LandingController::class, 'showLanding'])->name('landing');
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/data-tables', function () {
+    return view('users.data-tables');
+});
 
-// Route::get('/', function () {
-//     return view('dashboard.dashboard1');
-// });
+Route::get('/dashboard', function () {
+    return view('dashboard.dashboard4');
+})->middleware(['auth', 'first_time_payment']);
+
+Route::get('/', function () {
+    return view('client_registration');
+})->name('/');
+
+Route::get('/payment', function () {
+    return view('payments/dues_payment_sample');
+});
+
 
 Route::group(['prefix' => 'authentications'], function () {
     Route::group(['prefix' => 'style1'], function () {
@@ -80,9 +97,11 @@ Route::group(['prefix' => 'authentications'], function () {
     // });
 });
 
+Route::get('applicant-dues-payment', [App\Http\Controllers\PaymentController::class, 'firstDuesPayment'])->name('payment.first_dues_payment')->middleware(['auth']);
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'first_time_payment'])->group(function () {
     // Authenticated routes here
+
     Route::group(['prefix' => 'dashboards'], function () {
         Route::get('documentation-reports', function () {
             return view('dashboards.documentation-reports');
@@ -101,6 +120,9 @@ Route::middleware(['auth'])->group(function () {
             return view('dashboards.environment-monitoring');
         });
     });
+    // Route::get('/landing-2', function () {
+    //     return view('landing_2');
+    // });
 
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('dashboard1', function () {
@@ -422,9 +444,9 @@ Route::middleware(['auth'])->group(function () {
         return view('tables');
     });
 
-    Route::get('data-tables', function () {
-        return view('data-tables');
-    });
+    // Route::get('data-tables', function () {
+    //     return view('data-tables');
+    // });
 
     Route::group(['prefix' => 'forms'], function () {
         Route::group(['prefix' => 'controls'], function () {
@@ -555,11 +577,18 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::resource('userProfiles', App\Http\Controllers\UserProfileController::class)->middleware('auth');
-// Route::resource('registeredVessels', App\Http\Controllers\Registered_VesselsController::class);
-
-
+Route::resource('users', App\Http\Controllers\UserController::class)->middleware('auth');
 Route::resource('user-profiles', App\Http\Controllers\UserProfileController::class)->middleware('auth');
 Route::resource('registered-vessels', App\Http\Controllers\RegisteredVesselsController::class)->middleware('auth');
 Route::resource('payments', App\Http\Controllers\PaymentController::class);
+Route::post('update-profile-after-payment', [App\Http\Controllers\PaymentController::class, 'updateProfileAfterPayment'])->name('payments.update_profile_after_payment');
 Route::resource('applications', App\Http\Controllers\ApplicationController::class);
+
+
+Route::post('client-registration', [App\Http\Controllers\UserProfileController::class, 'clientRegistration'])->name('client_registration');
+
+Route::resource('departments', DepartmentController::class);
+
+Route::resource('units', App\Http\Controllers\UnitController::class);
+Route::resource('unit-heads', App\Http\Controllers\UnitHeadController::class);
+Route::resource('departmentheads', App\Http\Controllers\DepartmentheadController::class);

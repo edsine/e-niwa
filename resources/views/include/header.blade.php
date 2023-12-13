@@ -18,9 +18,9 @@
                 </div>
             </form>
         </li>
-       
+
     </ul>
-    <ul class="navbar-item flex-row ml-md-auto">        
+    <ul class="navbar-item flex-row ml-md-auto">
         <li class="nav-item dropdown  fullscreen-dropdown">
             <a class="nav-link night-light-mode"  href="javascript:void(0);">
                 <i class="las la-moon"id="darkModeIcon"></i>
@@ -30,7 +30,7 @@
             <a class="nav-link full-screen-mode" href="javascript:void(0);">
                 <i class="las la-compress" id="fullScreenIcon"></i>
             </a>
-        </li>        
+        </li>
         <li class="nav-item dropdown message-dropdown">
             <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="messageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="las la-envelope"></i>
@@ -121,7 +121,7 @@
                                     </div>
                                 </div>
                             </a>
-                            
+
                             <hr class="account-divider">
                             <div class="text-center">
                                 <a class="text-primary strong font-13" href="{{ url('/pages/notifications') }}"> {{__('View All')}}</a>
@@ -199,7 +199,7 @@
                                 </div>
                             </a>
                             <hr class="account-divider">
-                            <a class="account-item" href="{{ url('/authentications/style3/login') }}">
+                            <a class="account-item" href="{{ url('/authentications/style1/login') }}">
                                 <div class="media align-center">
                                     <div class="icon-wrap">
                                         <i class="las la-sign-out-alt font-20"></i>

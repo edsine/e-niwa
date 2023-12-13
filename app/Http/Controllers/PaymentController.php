@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Flash;
+use App\Models\UserProfile;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Repositories\PaymentRepository;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreatePaymentRequest;
 use App\Http\Requests\UpdatePaymentRequest;
-use App\Http\Controllers\AppBaseController;
-use App\Repositories\PaymentRepository;
-use Illuminate\Http\Request;
-use Flash;
 
 class PaymentController extends AppBaseController
 {
@@ -124,5 +126,36 @@ class PaymentController extends AppBaseController
         Flash::success('Payment deleted successfully.');
 
         return redirect(route('payments.index'));
+    }
+
+    public function firstDuesPayment(Request $request)
+    {
+        $user = Auth::user();
+        $user_profile = UserProfile::where('user_id', $user->id)->first();
+
+        if($user_profile->is_first_time_dues_paid == 1) {
+            return redirect()->route('/');
+        }
+
+        return view('payments.first_dues_payment', compact('user_profile'));
+    }
+
+    public function updateProfileAfterPayment(Request $request)
+    {
+        $input = $request->all();
+
+        //TODO: Get transaction ID from input and add to transactions table
+
+        try {
+            $user = Auth::user();
+            $user_profile = UserProfile::where('user_id', $user->id)->first();
+
+            $user_profile->is_first_time_dues_paid = 1;
+            $user_profile->save();
+
+            return response()->json(['success' => true, 'message' => 'Request successful']);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Payment was successful but an error occured updating profile. Please go to transaction logs to verify payment']);
+        }
     }
 }
