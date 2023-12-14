@@ -42,6 +42,10 @@ Route::get('/payment', function () {
     return view('payments/dues_payment_sample');
 });
 
+Route::get('/preliminary-form', function () {
+    return view('applications.preliminary_form');
+});
+
 
 Route::group(['prefix' => 'authentications'], function () {
     Route::group(['prefix' => 'style1'], function () {
