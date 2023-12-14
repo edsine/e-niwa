@@ -50,8 +50,8 @@
                 <p>Users</p>
             </a> --}}
 
-            <a data-active="{{ is_active_route(['users/*']) }}" href="{{ route('users.index') }}">
-                {{ __('Users') }} </a>
+            <a data-active="{{ is_active_route(['applications/*']) }}" href="{{ route('applications.index') }}">
+                {{ __('Applications') }} </a>
         </li>
     </ul>
 </nav>
