@@ -652,20 +652,20 @@
                                                                     <div class="form-control-wrap">
                                                                         <ul class="custom-control-group flex-column align-start">
                                                                             <li>
-                                                                                <div class="custom-control custom-radio">
-                                                                                    <input type="radio" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-full" required>
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-full" required>
                                                                                     <label class="custom-control-label" for="sv2-time-avilability-full">i</label>
                                                                                 </div>
                                                                             </li>
                                                                             <li>
-                                                                                <div class="custom-control custom-radio">
-                                                                                    <input type="radio" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-part" required>
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-part" required>
                                                                                     <label class="custom-control-label" for="sv2-time-avilability-part">i</label>
                                                                                 </div>
                                                                             </li>
                                                                             <li>
-                                                                                <div class="custom-control custom-radio">
-                                                                                    <input type="radio" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
                                                                                     <label class="custom-control-label" for="sv2-time-avilability-freelance">iii</label>
                                                                                 </div>
                                                                             </li>
@@ -807,49 +807,65 @@
                                                            <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Application Fee:</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">DREDGING/RECLAMATION Fee:</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">PENALTY FOR CONTRAVENTION of No. 13 of 1997  Fee:</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Shore Utilization</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
@@ -1104,52 +1120,68 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Drilling</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Bridge Crossing</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Pipeline Crossing</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Utility Lines Crossing</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
@@ -1420,91 +1452,119 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Hydrographic/Seismic Surveys</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Under-water Engineering Works</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Erection of Temporary/Permanent Structures</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Mooring Facilities within the waterways</label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Diversion of Water from Waterways </label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Research </label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
         
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label" for="sv1-email-address">Others </label>
-                                                                        <div class="form-control-wrap">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" name="sv2-time-avilability" id="sv2-time-avilability-freelance" required>
+                                                                            <label class="custom-control-label" for="sv2-time-avilability-freelance"></label>
+                                                                        </div>
+                                                                        {{-- <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
                                                                         </div>
                                                                             <br>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div> 
         
