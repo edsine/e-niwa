@@ -42,6 +42,10 @@ Route::get('/payment', function () {
     return view('payments/dues_payment_sample');
 });
 
+Route::get('/preliminary-form', function () {
+    return view('applications.preliminary_form');
+});
+
 
 Route::group(['prefix' => 'authentications'], function () {
     Route::group(['prefix' => 'style1'], function () {
@@ -114,6 +118,12 @@ Route::middleware(['auth', 'first_time_payment'])->group(function () {
         });
     });
 
+    // Authenticated routes here
+    Route::group(['prefix' => 'dashboards'], function () {
+        Route::get('environment-monitoring', function () {
+            return view('dashboards.environment-monitoring');
+        });
+    });
     // Route::get('/landing-2', function () {
     //     return view('landing_2');
     // });
