@@ -135,39 +135,35 @@
             }
 
             function makePayment() {
-                // const transactionId = generateTransactionId(20);
+                const publicKey = "{{ env('REMITA_PUBLIC_KEY') }}";
+                const transactionId = generateTransactionId(20);
 
-                // var handler = RmPaymentEngine.init({
-                //     key: "QzAwMDAyNzEyNTl8MTEwNjE4NjF8OWZjOWYwNmMyZDk3MDRhYWM3YThiOThlNTNjZTE3ZjYxOTY5NDdmZWE1YzU3NDc0ZjE2ZDZjNTg1YWYxNWY3NWM4ZjMzNzZhNjNhZWZlOWQwNmJhNTFkMjIxYTRiMjYzZDkzNGQ3NTUxNDIxYWNlOGY4ZWEyODY3ZjlhNGUwYTY", // Replace with public key
-                //     customerId: "{{ $user_profile->email }}", // Replace with customer id
-                //     transactionId: transactionId, // Replace with transaction id
-                //     firstName: "{{ $user_profile->first_name }}",
-                //     lastName: "{{ $user_profile->last_name }}",
-                //     email: "{{ $user_profile->email }}",
-                //     amount: 5000,
-                //     narration: "NIWA Act and Tariff Dues",
-                //     extendedData: { // Optional field. Details are available in the table
-                //         customFields: [{
-                //             name: "rrr",
-                //             value: "340007777362"
-                //         }],
-                //     },
-                //     onSuccess: function(response) {
-                //         updateProfileAfterPayment(transactionId)
-                //         // console.log('callback Successful Response', response);
-                //     },
-                //     onError: function(response) {
-                //         alert('An error occured, Please try again later')
-                //         console.log('callback Error Response', response);
-                //     },
-                //     onClose: function() {
-                //         console.log("closed");
-                //     }
-                // });
-                // handler.openIframe();
+                var handler = RmPaymentEngine.init({
+                    key: publicKey, // Replace with public key
+                    customerId: "{{ $user_profile->email }}", // Replace with customer id
+                    transactionId: transactionId, // Replace with transaction id
+                    firstName: "{{ $user_profile->first_name }}",
+                    lastName: "{{ $user_profile->last_name }}",
+                    email: "{{ $user_profile->email }}",
+                    amount: 5000,
+                    channel: "CARD,USSD",
+                    narration: "NIWA Act and Tariff Dues",
+                    onSuccess: function(response) {
+                        updateProfileAfterPayment(transactionId)
+                        // console.log('callback Successful Response', response);
+                    },
+                    onError: function(response) {
+                        alert('An error occured, Please try again later')
+                        console.log('callback Error Response', response);
+                    },
+                    onClose: function() {
+                        console.log("closed");
+                    }
+                });
+                handler.openIframe();
 
-                alert('Payment was successful');
-                updateProfileAfterPayment(generateTransactionId(20))
+                // alert('Payment was successful');
+                // updateProfileAfterPayment(generateTransactionId(20))
             }
         </script>
     @endpush
