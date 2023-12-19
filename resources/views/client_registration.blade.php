@@ -172,7 +172,7 @@
                                                 </ul>
                                             </div>
 
-                                            <div class="nk-stepper-step">
+                                            {{-- <div class="nk-stepper-step">
                                                 <div class="nk-stepper-step-head mb-4">
                                                     <h5 class="title">what are you applying for.?</h5>
 
@@ -248,13 +248,53 @@
                                                     </div>
 
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="nk-stepper-step">
                                                 <div class="nk-stepper-step-head mb-4">
                                                     <h5 class="title">Personal Info</h5>
                                                     <p>Basic information about you</p>
                                                 </div>
                                                 <div class="row g-3">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="office_close_by">Area
+                                                                Offices Close to you</label>
+                                                            <div class="form-control-wrap">
+                                                                <select class="form-select js-select2"
+                                                                    id="office_close_by" name="office_close_by"
+                                                                    data-placeholder="click to select" required>
+                                                                    <option value=""></option>
+
+                                                                    <option value="lagos">Lagos (Lagos AO)</option>
+                                                                    <option value="benue">Benue (Makurdi AO)</option>
+                                                                    <option value="kebbi">Kebbi (Yelwa AO)</option>
+                                                                    <option value="adamawa">Adamawa (Yola AO)</option>
+                                                                    <option value="niger">Niger (Baro Port, Minna AO)
+                                                                    </option>
+                                                                    <option value="bayelsa">Bayelsa (Yenagoa AO)
+                                                                    </option>
+                                                                    <option value="kano">Kano</option>
+                                                                    <option value="rivers">Rivers (Port Harcourt AO)
+                                                                    </option>
+                                                                    <option value="anambra">Anambra (Onitsha AO/RP)
+                                                                    </option>
+                                                                    <option value="ogun">Ogun (Abeokuta AO)</option>
+                                                                    <option value="cross-river">Cross River (Calabar
+                                                                        AO)</option>
+                                                                    <option value="sokoto">Sokoto (Sokoto AO)</option>
+                                                                    <option value="taraba">Taraba (Jalingo AO)</option>
+                                                                    <option value="kogi">Kogi (Lokoja AO)</option>
+                                                                    <option value="delta">Delta (Warri AO)</option>
+                                                                    <option value="kaduna">Kaduna (Kaduna AO)</option>
+                                                                    <option value="akwa-ibom">Akwa Ibom (Eket AO)
+                                                                    </option>
+                                                                    <option value="imo">Imo (Oguta AO)</option>
+                                                                    <option value="ondo">Ondo (Igbokoda AO)</option>
+                                                                </select>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label class="form-label" for="last_name">Legal
