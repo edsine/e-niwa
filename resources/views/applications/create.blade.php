@@ -201,7 +201,7 @@
 
                                                             <div class="col-sm-12">
                                                                 <div class="form-group">
-                                                                    <label class="form-label" for="middlename">
+                                                                    <label class="form-label" for="email">
                                                                         Email
                                                                     </label>
                                                                     <div class="form-control-wrap">
@@ -284,13 +284,13 @@
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="streetno">
                                                                                 Street and Number
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="email" required>
+                                                                                    id="streetno" name="streetno"
+                                                                                    placeholder="Street and Number" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -298,13 +298,13 @@
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="city">
                                                                                 City
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="email" required>
+                                                                                    id="city" name="city"
+                                                                                    placeholder="City" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -312,39 +312,39 @@
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="lga">
                                                                                 LGA
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="state" required>
+                                                                                    id="lga" name="lga"
+                                                                                    placeholder="Local Government Area" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="state">
                                                                                 State
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="state" required>
+                                                                                    id="state" name="state"
+                                                                                    placeholder="State" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="country">
                                                                                 Country
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="state" required>
+                                                                                    id="country" name="country"
+                                                                                    placeholder="country" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -356,16 +356,16 @@
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="state" required>
+                                                                                    id="phoneno" name="phone"
+                                                                                    placeholder="Phone Number" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
 
 
-                                                                    <div class="col-sm-12">
+                                                                    {{-- <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="">
                                                                                 Phone No.
                                                                             </label>
                                                                             <div class="form-control-wrap">
@@ -374,68 +374,68 @@
                                                                                     placeholder="state" required>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+                                                                    </div> --}}
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="alternative_number">
                                                                                 Alternative Number
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="email" required>
+                                                                                    id="alternative_number" name="alternative_number"
+                                                                                    placeholder="alternative_number" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="dob">
                                                                                 Date Of Birth
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="date" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="month/day/year" required>
+                                                                                    id="dob" name="dob"
+                                                                                    placeholder="Month/Day/Year" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="eye_color">
                                                                                 Eye Color
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="eye color" required>
+                                                                                    id="eye_color" name="eye_color"
+                                                                                    placeholder="Eye Color" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="citizenship">
                                                                                 Citizenship
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="citizens" required>
+                                                                                    id="citizenship" name="citizenship"
+                                                                                    placeholder="Citizenship" required>
                                                                             </div>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="languages">
                                                                                 Languages
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
+                                                                                    id="languages" name="email"
                                                                                     placeholder="Languages" required>
                                                                             </div>
                                                                         </div>
@@ -443,12 +443,12 @@
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="facialmarks">
                                                                                 Facial /Trbal Marks
                                                                             </label>
-                                                                            <div class="form-control-wrap">
+                                                                            <div class="facialmarks">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
+                                                                                    id="facialmarks" name="facialmarks"
                                                                                     placeholder="Facial/Tribal Marks"
                                                                                     required>
                                                                             </div>
@@ -457,12 +457,12 @@
 
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
+                                                                            <label class="form-label" for="passportno">
                                                                                 Passport No/ National Identification No
                                                                             </label>
                                                                             <div class="form-control-wrap">
                                                                                 <input type="text" class="form-control"
-                                                                                    id="email" name="email"
+                                                                                    id="passportno" name="passportno"
                                                                                     placeholder="Passport/NIN" required>
                                                                             </div>
                                                                         </div>
@@ -583,12 +583,12 @@
                                                             <div class="form-group">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label class="form-label" for="middlename">
+                                                                        <label class="form-label" for="drivenbefore">
                                                                             Have You driven a Boat Before?
                                                                         </label>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control"
-                                                                                id="email" name=""
+                                                                                id="drivenbefore" name="drivenbefore"
                                                                                 placeholder="Driven A Boat Before"
                                                                                 required>
                                                                         </div>
@@ -600,12 +600,12 @@
                                                             <div class="form-group">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label class="form-label" for="middlename">
+                                                                        <label class="form-label" for="how_long">
                                                                             if Yes, How long
                                                                         </label>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control"
-                                                                                id="email" name=""
+                                                                                id="how_long" name="how_long"
                                                                                 placeholder="How long" required>
                                                                         </div>
                                                                     </div>
@@ -616,12 +616,12 @@
                                                             <div class="form-group">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label class="form-label" for="middlename">
+                                                                        <label class="form-label" for="boatType">
                                                                             Type of Boat
                                                                         </label>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control"
-                                                                                id="email" name=""
+                                                                                id="boatType" name="boatType"
                                                                                 placeholder="Type of Boat" required>
                                                                         </div>
                                                                     </div>
@@ -632,12 +632,12 @@
                                                             <div class="form-group">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label class="form-label" for="middlename">
+                                                                        <label class="form-label" for="boatCapacity">
                                                                             Capacity Of Boat
                                                                         </label>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control"
-                                                                                id="" name=""
+                                                                                id="boatCapacity" name="boatCapacity"
                                                                                 placeholder="Boat capacity" required>
                                                                         </div>
                                                                     </div>
@@ -742,12 +742,12 @@
                                                             <div class="form-group">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label class="form-label" for="middlename">
+                                                                        <label class="form-label" for="nameofunion">
                                                                             Name of Union /Association
                                                                         </label>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control"
-                                                                                id="" name=""
+                                                                                id="nameofunion" name="nameofunion"
                                                                                 placeholder="Boat Club/Association"
                                                                                 required>
                                                                         </div>
@@ -757,12 +757,12 @@
 
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label class="form-label" for="middlename">
+                                                                        <label class="form-label" for="jettyname">
                                                                             Name Of Jetty
                                                                         </label>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control"
-                                                                                id="" name=""
+                                                                                id="jettyname" name="jettyname"
                                                                                 placeholder="Name of Jetty" required>
                                                                         </div>
                                                                     </div>
@@ -771,13 +771,13 @@
 
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label class="form-label" for="middlename">
+                                                                        <label class="form-label" for="nameofboatclub">
                                                                             Name Of Boat Club
                                                                         </label>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control"
-                                                                                id="" name=""
-                                                                                placeholder="Name of Jetty" required>
+                                                                                id="nameofboatclub" name="nameofboatclub"
+                                                                                placeholder="Name of Boat Club" required>
                                                                         </div>
                                                                     </div>
 
@@ -785,13 +785,13 @@
 
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label class="form-label" for="middlename">
+                                                                        <label class="form-label" for="dateofsubmission">
                                                                             Date this document submitted:
                                                                         </label>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control"
-                                                                                id="" name=""
-                                                                                placeholder="Name of Jetty" required>
+                                                                                id="dateofsubmission" name="dateofsubmission"
+                                                                                placeholder="Date Of Submission" required>
                                                                         </div>
                                                                     </div>
 
