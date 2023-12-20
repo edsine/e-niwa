@@ -1,7 +1,7 @@
 <!-- Name Field -->
 <div class="col-sm-12">
-    {!! Form::label('name', 'Name:') !!}
-    <p>{{ $unit->name }}</p>
+    {!! Form::label('unit_name', 'Name:') !!}
+    <p>{{ $unit->unit_name }}</p>
 </div>
 
 <!-- Department Id Field -->

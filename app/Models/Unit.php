@@ -9,16 +9,16 @@ class Unit extends Model
     public $table = 'units';
 
     public $fillable = [
-        'name',
+        'unit_name',
         'department_id'
     ];
 
     protected $casts = [
-        'name' => 'string'
+        'unit_name' => 'string'
     ];
 
     public static array $rules = [
-        'name' => 'required',
+        'unit_name' => 'required',
         'department_id' => 'required'
     ];
 

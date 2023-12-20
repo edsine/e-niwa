@@ -6,15 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserProfile extends Model
 {
-    public $table = 'user_profiles';
+    public $table = 'staff';
 
     public $fillable = [
-        'user_id',
-        'first_name',
-        'last_name',
-        'other_name',
-        'email',
-        'phone_number',
+        
         'street',
         'state',
         'lga',
@@ -24,8 +19,41 @@ class UserProfile extends Model
         'city',
         'country',
         'alternate_phone_number',
-        'date_of_birth',
-        'is_first_time_dues_paid'
+        'is_first_time_dues_paid',
+
+        'user_id',
+        'ranking_id',
+        'department_id',
+        'branch_id',
+        'dash_type',
+        'gender',
+        'staff_id',
+        'region',
+        'phone',
+        'profile_picture',
+        'status',
+        'alternative_email',
+        'created_by',
+        'date_approved',
+        'approved_by',
+        'security_key',
+        'date_modified',
+        'modified_by',
+        'office_position',
+        'position',
+        'about_me',
+        'total_received_email',
+        'total_sent_email',
+        'total_draft_email',
+        'total_event',
+        'my_groups',
+        'designation_id',
+        'account_holder_name',
+        'account_number',
+        'bank_name',
+        'bank_identifier_code',
+        'branch_location',
+        'dob',
     ];
 
     protected $casts = [

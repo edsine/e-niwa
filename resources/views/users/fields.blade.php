@@ -7,7 +7,7 @@
                     <i class="la la-user"></i>
                 </span>
             </div>
-            <input type="text" name="name" class="form-control" placeholder="John Andrews">
+            <input type="text" name="first_name" class="form-control" placeholder="John Andrews">
         </div>
         <span class="form-text text-muted">Please enter your Name</span>
     </div>

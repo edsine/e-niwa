@@ -1,7 +1,7 @@
 <!-- Name Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('name', 'Name:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('unit_name', 'Name:') !!}
+    {!! Form::text('unit_name', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Department Id Field -->

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Departmenthead extends Model
 {
-    public $table = 'departmentheads';
+    public $table = 'department_heads';
 
     public $fillable = [
         'user_id',

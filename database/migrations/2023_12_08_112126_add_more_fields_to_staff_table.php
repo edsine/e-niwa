@@ -11,14 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('user_profiles', function (Blueprint $table) {
+        Schema::table('staff', function (Blueprint $table) {
             $table->string('applicant_class');
             $table->string('application_type');
             $table->string('office_close_by');
             $table->string('city');
             $table->string('country');
             $table->string('alternate_phone_number')->nullable();
-            $table->string('date_of_birth')->nullable();
+            $table->string('street');
+            $table->string('state');
+            $table->string('lga');
+            $table->integer('is_first_time_dues_paid')->default(0);
         });
     }
 
