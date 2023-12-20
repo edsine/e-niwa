@@ -13,7 +13,43 @@ class Application extends Model
         'area_office',
         'company_name',
         'business_nature',
-        'application_status'
+        'application_status',
+
+
+        'zone',
+        'office_address',
+        'mailing_address',
+        'telephone_number',
+        'project_name',
+        'project_location',
+        'aspects_of_project_work',
+        'dredging_area_plan_image_url',
+        'total_area_to_be_dredged',
+        'purpose_of_dredgin',
+        'quantity_to_be_dredged',
+        'name_and_type_of_dredger',
+        'particulars_of_dredger',
+        'output_of_dredger',
+        'size_of_floating_pipes',
+        'dredger_owned_hired',
+        'name_and_address_of_owners',
+        'purpose_other_than_dredging',
+        'commencement_date',
+        'project_duration',
+
+        'names_of_company_representative',
+        'company_representative_designations',
+
+        'date_of_site_inspection',
+        'inspection_officer',
+        'parties_to_inspection',
+
+        'verification_of_applicant',
+        'observations',
+        'comments',
+        'recommendation',
+        'justification',
+        'is_recommended',
     ];
 
     protected $casts = [

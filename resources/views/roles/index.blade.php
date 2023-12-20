@@ -24,7 +24,7 @@
                         <nav class="breadcrumb-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0);"> {{ __('Dashboard') }}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span> {{ __('Applications') }}</span>
+                                <li class="breadcrumb-item active" aria-current="page"><span> {{ __('Roles') }}</span>
                                     {{-- <li class="breadcrumb-item active" aria-current="page"><span> {{ __('') }}</span> --}}
                                 </li>
                             </ol>
@@ -36,7 +36,7 @@
             <ul class="navbar-nav d-flex align-center ml-auto right-side-filter">
                 <li class="nav-item more-dropdown">
                     <a class="btn btn-primary float-right"
-                       href="{{ route('applications.create') }}">
+                       href="{{ route('roles.create') }}">
                         Add New
                     </a>
                 </li>
@@ -74,7 +74,7 @@
 
                             <div class="clearfix"></div>
 
-                            @include('applications.table')
+                            @include('roles.table')
 
 
                         </div>

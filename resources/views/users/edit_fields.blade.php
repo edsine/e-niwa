@@ -7,7 +7,7 @@
                     <i class="la la-user"></i>
                 </span>
             </div>
-            <input type="text" name="name" class="form-control" placeholder="John Andrews">
+            <input type="text" name="name" value="{{ old('name', $user->name) }}" class="form-control" placeholder="John Andrews">
         </div>
         <span class="form-text text-muted">Please enter your Name</span>
     </div>
@@ -18,7 +18,8 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">@</span>
                 </div>
-                <input type="email" name="email" class="form-control" placeholder="Email">
+                <input type="email" name="email" value="{{ old('email', $user->email) }}" class="form-control"
+                    placeholder="Email">
             </div>
         </div>
     </div>
@@ -28,7 +29,9 @@
             <label for="exampleSelectl">Select Role</label>
             <select multiple class="form-control form-control-lg" id="exampleSelectl" name="roles[]">
                 @foreach ($roles as $role)
-                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                    <option value="{{ $role->id }}"
+                        {{ in_array($role->id, $user->roles->pluck('id')->toArray()) ? 'selected' : '' }}>
+                        {{ $role->name }}</option>
                 @endforeach
 
             </select>
@@ -37,8 +40,8 @@
 
     <div class="col-md-4 mb-4">
         <label for="validationCustom02">Input Password:</label>
-        <input type="password" class="form-control" name="password" id="validationCustom02" placeholder="input password"
-            required="">
+        <input type="password" class="form-control" name="password" id="validationCustom02"
+            placeholder="input password">
         <div class="valid-feedback">
             Success!
         </div>
@@ -46,7 +49,7 @@
     <div class="col-md-4 mb-4">
         <label for="validationCustom02">Confirm Password:</label>
         <input type="password" class="form-control" name="password_confirmation" id="validationCustom02"
-            placeholder="input password" required="">
+            placeholder="input password">
         <div class="valid-feedback">
             Success!
         </div>

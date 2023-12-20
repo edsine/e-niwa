@@ -155,6 +155,6 @@ class UserProfileController extends AppBaseController
 
         Flash::success('User Profile successfully created.');
 
-        return redirect(route('payment.dues_payment'));
+        return redirect(route('payment.first_dues_payment'));
     }
 }

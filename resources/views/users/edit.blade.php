@@ -63,7 +63,7 @@
                                     <div class="form-group row">
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch', 'class' => 'needs-validation was-validated']) !!}
-                                                @include('users.fields')
+                                                @include('users.edit_fields')
                                                 {!! Form::submit('Save', ['class' => 'float-right btn btn-primary mt-3']) !!}
                                                 <a class="float-right btn btn-default mr-3 mt-3" href="{{ route('users.index') }}" type="submit">Cancel</a>
                                             {!! Form::close() !!}

@@ -51,96 +51,50 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="container col-md-12 p-0">
-                        <div class="row layout-top-spacing date-table-container">
-                            @include('flash::message')
+                        <form class="nk-stepper stepper-init is-alter myFormClass" method="POST"
+                            action="{{ route('client_registration') }}" id="stepper-survey-v2">
+                            @csrf
+                            <div class="row layout-top-spacing date-table-container">
+                                @include('flash::message')
 
-                            <div class="card col-md-10 widget box box-shadow mb-4">
+
+                                <div class="card col-md-10 widget box box-shadow mb-4">
+                                    <div class="widget-content widget-content-area">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <label class="form-label" for="application_type">What are you applying
+                                                    for.?</label>
+                                                <div class="form-group">
+                                                    <select class="form-control" id="application_type"
+                                                        name="application_type" data-placeholder="click to select" required>
+                                                        <option value=""></option>
+                                                        @foreach (payment_services() as $key => $service)
+                                                            @if ($key == 'niwa-act-tariff-dues')
+                                                                @continue
+                                                            @endif
+                                                            <option value="{{ $key }}">{{ $service }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card col-md-10 widget box box-shadow mb-4  form-right-of-way">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4>All Major Options Form</h4>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="widget-content widget-content-area">
                                     <div class="form-group row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <label class="form-label" for="application_type">What are you applying
-                                                for.?</label>
-                                            <div class="form-group">
-                                                <select class="form-control" id="application_type" name="application_type"
-                                                    data-placeholder="click to select" required>
-                                                    <option value=""></option>
-                                                    <option value="right-of-way">Use of Right of Way
-                                                    </option>
-                                                    <option value="dredging-access-charge">Dredging
-                                                        Access Charge/Reclamation</option>
-                                                    <option value="waterway-operators-training">
-                                                        Training and Certification of Waterway Operators
-                                                    </option>
-                                                    <option value="issue-control-licenses">Issue and
-                                                        Control Licenses for Inland Navigation, Piers,
-                                                        Jetties, Dockyards</option>
-                                                    <option value="grant-licenses">Grant Licenses to
-                                                        Private Inland Waterway Operators</option>
-                                                    <option value="ferry-services">Ferry Services
-                                                        within the Inland Waterways System</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <label class="form-label" for="office_close_by">Area Offices Close to
-                                                you</label>
-                                            <div class="form-group">
-                                                <select class="form-control" id="office_close_by" name="office_close_by"
-                                                    data-placeholder="click to select" required>
-                                                    <option value=""></option>
-
-                                                    <option value="lagos">Lagos (Lagos AO)</option>
-                                                    <option value="benue">Benue (Makurdi AO)</option>
-                                                    <option value="kebbi">Kebbi (Yelwa AO)</option>
-                                                    <option value="adamawa">Adamawa (Yola AO)</option>
-                                                    <option value="niger">Niger (Baro Port, Minna AO)
-                                                    </option>
-                                                    <option value="bayelsa">Bayelsa (Yenagoa AO)
-                                                    </option>
-                                                    <option value="kano">Kano</option>
-                                                    <option value="rivers">Rivers (Port Harcourt AO)
-                                                    </option>
-                                                    <option value="anambra">Anambra (Onitsha AO/RP)
-                                                    </option>
-                                                    <option value="ogun">Ogun (Abeokuta AO)</option>
-                                                    <option value="cross-river">Cross River (Calabar
-                                                        AO)</option>
-                                                    <option value="sokoto">Sokoto (Sokoto AO)</option>
-                                                    <option value="taraba">Taraba (Jalingo AO)</option>
-                                                    <option value="kogi">Kogi (Lokoja AO)</option>
-                                                    <option value="delta">Delta (Warri AO)</option>
-                                                    <option value="kaduna">Kaduna (Kaduna AO)</option>
-                                                    <option value="akwa-ibom">Akwa Ibom (Eket AO)
-                                                    </option>
-                                                    <option value="imo">Imo (Oguta AO)</option>
-                                                    <option value="ondo">Ondo (Igbokoda AO)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="card col-md-10 widget box box-shadow mb-4  form-right-of-way">
-                            <div class="widget-header">
-                                <div class="row">
-                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>All Major Options Form</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-content widget-content-area">
-                                <div class="form-group row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <form class="nk-stepper stepper-init is-alter myFormClass" method="POST"
-                                            action="{{ route('client_registration') }}" id="stepper-survey-v2">
-                                            @csrf
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="nk-stepper-content">
                                                 <div class="nk-stepper-progress stepper-progress mb-4">
                                                     <div class="stepper-progress-count mb-2"></div>
@@ -155,7 +109,7 @@
                                                             <p>BOAT SKIPPERS TRAINING FOR ALL POWER BOAT AND RIB MASTER</p>
                                                         </div>
                                                         <div class="row g-3">
-                                                            <div class="col-sm-12">
+                                                            <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                     <label class="form-label" for="lastname">
                                                                         Last Name
@@ -169,8 +123,7 @@
 
                                                             </div>
 
-
-                                                            <div class="col-sm-12">
+                                                            <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                     <label class="form-label" for="middlename">
                                                                         Middle Name
@@ -183,8 +136,7 @@
                                                                 </div>
                                                             </div>
 
-
-                                                            <div class="col-sm-12">
+                                                            <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                     <label class="form-label" for="firstname">
                                                                         First Name
@@ -199,7 +151,7 @@
 
 
 
-                                                            <div class="col-sm-12">
+                                                            <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                     <label class="form-label" for="email">
                                                                         Email
@@ -207,703 +159,356 @@
                                                                     <div class="form-control-wrap">
                                                                         <input type="email" class="form-control"
                                                                             id="email" name="email"
-                                                                            placeholder="email" required>
+                                                                            placeholder="Email" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                         </div>
-                                                        <!-- <ul class="row g-3">
-                                                                <li class="col-6">
-                                                                    <div class="custom-control custom-control-sm custom-radio pro-control custom-control-full">
-                                                                        <input type="radio" class="custom-control-input" name="applicant_class" id="applicant_class-pleasure" value="pleasure" required>
-                                                                        <label class="custom-control-label" for="applicant_class-pleasure">
-                                                                            <span class="d-flex flex-column text-center py-1 py-sm-2">
-                                                                                <span class="icon-wrap xl">
-                                                                                    <img class="img" src="./images/icons/fornt-end-developer.svg" alt="">
-                                                                                </span>
-                                                                                <span class="lead-text mb-1 mt-3">Pleasure</span>
-                                                                                <span class="sub-text">Class A</span>
-                                                                            </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="col-6">
-                                                                    <div class="custom-control custom-control-sm custom-radio pro-control custom-control-full">
-                                                                        <input type="radio" class="custom-control-input" name="applicant_class" id="applicant_class-domestic" value="domestic" required>
-                                                                        <label class="custom-control-label" for="applicant_class-domestic">
-                                                                            <span class="d-flex flex-column text-center py-1 py-sm-2">
-                                                                                <span class="icon-wrap xl">
-                                                                                    <img class="img" src="./images/icons/ux-designer.svg" alt="">
-                                                                                </span>
-                                                                                <span class="lead-text mb-1 mt-3">Domestic</span>
-                                                                                <span class="sub-text">Class B.</span>
-                                                                            </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="col-6">
-                                                                    <div class="custom-control custom-control-sm custom-radio pro-control custom-control-full">
-                                                                        <input type="radio" class="custom-control-input" name="applicant_class" id="applicant_class-community" value="community" required>
-                                                                        <label class="custom-control-label" for="applicant_class-community">
-                                                                            <span class="d-flex flex-column text-center py-1 py-sm-2">
-                                                                                <span class="icon-wrap xl">
-                                                                                    <img class="img" src="./images/icons/freelancing-service.svg" alt="">
-                                                                                </span>
-                                                                                <span class="lead-text mb-1 mt-3">Community</span>
-                                                                                <span class="sub-text">Class C</span>
-                                                                            </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="col-6">
-                                                                    <div class="custom-control custom-control-sm custom-radio pro-control custom-control-full">
-                                                                        <input type="radio" class="custom-control-input" name="applicant_class" id="applicant_class-commercial" value="commercial" required>
-                                                                        <label class="custom-control-label" for="applicant_class-commercial">
-                                                                            <span class="d-flex flex-column text-center py-1 py-sm-2">
-                                                                                <span class="icon-wrap xl">
-                                                                                    <img class="img" src="./images/icons/freelancing-service.svg" alt="">
-                                                                                </span>
-                                                                                <span class="lead-text mb-1 mt-3">Commercial</span>
-                                                                                <span class="sub-text">Class D</span>
-                                                                            </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </li>
-                                                            </ul> -->
-                                                    </div>
 
+                                                    </div>
                                                     <div class="nk-stepper-step">
                                                         <div class="nk-stepper-step-head mb-4">
                                                             <h5 class="title">Permanent Physical Mailing Address</h5>
                                                         </div>
                                                         <div class="row g-4">
-                                                            <div class="col-12">
+
+
+                                                            <div class="col-sm-6">
                                                                 <div class="form-group">
-
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="streetno">
-                                                                                Street and Number
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="streetno" name="streetno"
-                                                                                    placeholder="Street and Number" required>
-                                                                            </div>
-                                                                        </div>
+                                                                    <label class="form-label" for="streetno">
+                                                                        Street and Number
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="streetno" name="streetno"
+                                                                            placeholder="Street Number" required>
                                                                     </div>
-
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="city">
-                                                                                City
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="city" name="city"
-                                                                                    placeholder="City" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="lga">
-                                                                                LGA
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="lga" name="lga"
-                                                                                    placeholder="Local Government Area" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="state">
-                                                                                State
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="state" name="state"
-                                                                                    placeholder="State" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="country">
-                                                                                Country
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="country" name="country"
-                                                                                    placeholder="country" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="middlename">
-                                                                                Phone No.
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="phoneno" name="phone"
-                                                                                    placeholder="Phone Number" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-
-                                                                    {{-- <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="">
-                                                                                Phone No.
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="state" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> --}}
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="alternative_number">
-                                                                                Alternative Number
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="alternative_number" name="alternative_number"
-                                                                                    placeholder="alternative_number" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="dob">
-                                                                                Date Of Birth
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="date" class="form-control"
-                                                                                    id="dob" name="dob"
-                                                                                    placeholder="Month/Day/Year" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="eye_color">
-                                                                                Eye Color
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="eye_color" name="eye_color"
-                                                                                    placeholder="Eye Color" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="citizenship">
-                                                                                Citizenship
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="citizenship" name="citizenship"
-                                                                                    placeholder="Citizenship" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="languages">
-                                                                                Languages
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="languages" name="email"
-                                                                                    placeholder="Languages" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="facialmarks">
-                                                                                Facial /Trbal Marks
-                                                                            </label>
-                                                                            <div class="facialmarks">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="facialmarks" name="facialmarks"
-                                                                                    placeholder="Facial/Tribal Marks"
-                                                                                    required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-sm-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="passportno">
-                                                                                Passport No/ National Identification No
-                                                                            </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="passportno" name="passportno"
-                                                                                    placeholder="Passport/NIN" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-
-                                                                    <!-- <label class="form-label" for="application_type">Select</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <select class="form-select js-select2" id="application_type" name="application_type" data-placeholder="click to select" required>
-                                                                                <option value=""></option>
-                                                                                <option value="right-of-way">Use of Right
-                                                                                    of Way
-                                                                                </option>
-                                                                                <option value="dredging-access-charge">
-                                                                                    Dredging
-                                                                                    Access Charge/Reclamation</option>
-                                                                                <option value="waterway-operators-training">
-                                                                                    Training and Certification of Waterway
-                                                                                    Operators
-                                                                                </option>
-                                                                                <option value="issue-control-licenses">
-                                                                                    Issue and
-                                                                                    Control Licenses for Inland Navigation,
-                                                                                    Piers,
-                                                                                    Jetties, Dockyards</option>
-                                                                                <option value="grant-licenses">Grant
-                                                                                    Licenses to
-                                                                                    Private Inland Waterway Operators
-                                                                                </option>
-                                                                                <option value="ferry-services">Ferry
-                                                                                    Services
-                                                                                    within the Inland Waterways System
-                                                                                </option>
-                                                                            </select>
-                                                                        </div> -->
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="form-group">
-
-
-
-
-
-
-
-
-
-
-
-                                                                    <!-- <label class="form-label" for="office_close_by">Area
-                                                                            Offices Close to you</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <select class="form-select js-select2" id="office_close_by" name="office_close_by" data-placeholder="click to select" required>
-                                                                                <option value=""></option>
-                            
-                                                                                <option value="lagos">Lagos (Lagos AO)
-                                                                                </option>
-                                                                                <option value="benue">Benue (Makurdi AO)
-                                                                                </option>
-                                                                                <option value="kebbi">Kebbi (Yelwa AO)
-                                                                                </option>
-                                                                                <option value="adamawa">Adamawa (Yola AO)
-                                                                                </option>
-                                                                                <option value="niger">Niger (Baro Port,
-                                                                                    Minna AO)
-                                                                                </option>
-                                                                                <option value="bayelsa">Bayelsa (Yenagoa
-                                                                                    AO)
-                                                                                </option>
-                                                                                <option value="kano">Kano</option>
-                                                                                <option value="rivers">Rivers (Port
-                                                                                    Harcourt AO)
-                                                                                </option>
-                                                                                <option value="anambra">Anambra (Onitsha
-                                                                                    AO/RP)
-                                                                                </option>
-                                                                                <option value="ogun">Ogun (Abeokuta AO)
-                                                                                </option>
-                                                                                <option value="cross-river">Cross River
-                                                                                    (Calabar
-                                                                                    AO)</option>
-                                                                                <option value="sokoto">Sokoto (Sokoto AO)
-                                                                                </option>
-                                                                                <option value="taraba">Taraba (Jalingo AO)
-                                                                                </option>
-                                                                                <option value="kogi">Kogi (Lokoja AO)
-                                                                                </option>
-                                                                                <option value="delta">Delta (Warri AO)
-                                                                                </option>
-                                                                                <option value="kaduna">Kaduna (Kaduna AO)
-                                                                                </option>
-                                                                                <option value="akwa-ibom">Akwa Ibom (Eket
-                                                                                    AO)
-                                                                                </option>
-                                                                                <option value="imo">Imo (Oguta AO)
-                                                                                </option>
-                                                                                <option value="ondo">Ondo (Igbokoda AO)
-                                                                                </option>
-                                                                            </select>
-                                                                        </div> -->
-
                                                                 </div>
                                                             </div>
 
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="city">
+                                                                        City
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="city" name="city"
+                                                                            placeholder="City" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="lga">
+                                                                        LGA
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="lga" name="lga"
+                                                                            placeholder="Local Government Area" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="state">
+                                                                        State
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="state" name="state"
+                                                                            placeholder="State" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="country">
+                                                                        Country
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="country" name="country"
+                                                                            placeholder="Country" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="phoneno">
+                                                                        Phone No.
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="phoneno" name="phoneno"
+                                                                            placeholder="Phone Number" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                            {{-- <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="middlename">
+                                                                        Phone No.
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="email" name="email"
+                                                                            placeholder="state" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div> --}}
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="alternativenumber">
+                                                                        Alternative Number
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="alternativenumber" name="alternativenumber"
+                                                                            placeholder="Alternative Number" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="dob">
+                                                                        Date Of Birth
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="date" class="form-control"
+                                                                            id="email" name="dob"
+                                                                            placeholder="Month/Day/Year" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="eyecolor">
+                                                                        Eye Color
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="eyecolor" name="eyecolor"
+                                                                            placeholder="Eye Color" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="citizenship">
+                                                                        Citizenship
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="citizenship" name="citizenship"
+                                                                            placeholder="Citizenship" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="languages">
+                                                                        Languages
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="languages" name="languages"
+                                                                            placeholder="Languages" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="facialmarks">
+                                                                        Facial /Trbal Marks
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="facialmarks" name="facialmarks"
+                                                                            placeholder="Facial/Tribal Marks" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="passportno">
+                                                                        Passport No/ National Identification No
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="passportno" name="passportno"
+                                                                            placeholder="Passport/NIN" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-
-
                                                     <div class="nk-stepper-step">
                                                         <div class="nk-stepper-step-head mb-4">
                                                             <h5 class="title">Boat Driving Experience</h5>
                                                             <p>Basic information about you</p>
                                                         </div>
                                                         <div class="row g-3">
-
-                                                            <div class="form-group">
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="drivenbefore">
-                                                                            Have You driven a Boat Before?
-                                                                        </label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control"
-                                                                                id="drivenbefore" name="drivenbefore"
-                                                                                placeholder="Driven A Boat Before"
-                                                                                required>
-                                                                        </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="drivenBefore">
+                                                                        Have You driven a Boat Before?
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="drivenBefore" name="drivenBefore"
+                                                                            placeholder="Driven A Boat Before" required>
                                                                     </div>
-
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="how_long">
-                                                                            if Yes, How long
-                                                                        </label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control"
-                                                                                id="how_long" name="how_long"
-                                                                                placeholder="How long" required>
-                                                                        </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="howLong">
+                                                                        if Yes, How long
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="howLong" name="howLong"
+                                                                            placeholder="How long" required>
                                                                     </div>
-
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="boatType">
-                                                                            Type of Boat
-                                                                        </label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control"
-                                                                                id="boatType" name="boatType"
-                                                                                placeholder="Type of Boat" required>
-                                                                        </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="boatType">
+                                                                        Type of Boat
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="boatType" name="boatType"
+                                                                            placeholder="Type of Boat" required>
                                                                     </div>
-
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="boatCapacity">
-                                                                            Capacity Of Boat
-                                                                        </label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control"
-                                                                                id="boatCapacity" name="boatCapacity"
-                                                                                placeholder="Boat capacity" required>
-                                                                        </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="boatCapacity">
+                                                                        Capacity Of Boat
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="boatCapacity" name="boatCapacity"
+                                                                            placeholder="Boat capacity" required>
                                                                     </div>
-
                                                                 </div>
                                                             </div>
-
-
-
-                                                            <!-- <div class="form-group">
-                                                                    <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="middlename">
-                            
-                                                                        </label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="email" name="" placeholder="How long" required>
-                                                                        </div>
-                                                                    </div>
-                                                              
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="first_name">First
-                                                                            of
-                                                                            Given Name</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First name" required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="other_name">Middle
-                                                                            Name</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="other_name" name="other_name" placeholder="Other name">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="email">Email
-                                                                            Address</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="email" name="email" placeholder="Email Address" required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="password">Password</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="password_confirmation">Confirm
-                                                                            Password</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label">Upload Your Letter of
-                                                                            Intent</label>
-                                                                        <span class="form-note mb-2">(Files accepted: .pdf.
-                                                                            doc/docx - Max file size: 190k for demo
-                                                                            limit)</span>
-                                                                        <div class="form-control-wrap">
-                                                                            <div class="form-file">
-                                                                                <input type="file" multiple class="form-file-input" id="sv2-file-attachment" name="letter_of_intent_file" onchange="previewFile()">
-                                                                                <label class="form-file-label" for="sv2-file-attachment">Choose
-                                                                                    files....</label>
-                                                                            </div>
-                                                                            <div class="preview-circle" id="file-preview">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div> -->
                                                         </div>
                                                     </div>
-
-
                                                     <div class="nk-stepper-step">
                                                         <div class="nk-stepper-step-head mb-4">
                                                             <h5 class="title">Membership of Approved Union & Jetties/Boat
                                                                 Clubs</h5>
-                                                            <!-- {{-- <p>Tation argumentum et usu, dicit viderer evertitur te has</p> --}} -->
                                                         </div>
-
-
-
-
                                                         <div class="row g-3">
 
-                                                            <div class="form-group">
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="nameofunion">
-                                                                            Name of Union /Association
-                                                                        </label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control"
-                                                                                id="nameofunion" name="nameofunion"
-                                                                                placeholder="Boat Club/Association"
-                                                                                required>
-                                                                        </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="nameofunion">
+                                                                        Name of Union /Association
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="nameofunion" name="nameofunion"
+                                                                            placeholder="Name of Union /Association" required>
                                                                     </div>
-
-                                                                </div>
-
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="jettyname">
-                                                                            Name Of Jetty
-                                                                        </label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control"
-                                                                                id="jettyname" name="jettyname"
-                                                                                placeholder="Name of Jetty" required>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="nameofboatclub">
-                                                                            Name Of Boat Club
-                                                                        </label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control"
-                                                                                id="nameofboatclub" name="nameofboatclub"
-                                                                                placeholder="Name of Boat Club" required>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="dateofsubmission">
-                                                                            Date this document submitted:
-                                                                        </label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control"
-                                                                                id="dateofsubmission" name="dateofsubmission"
-                                                                                placeholder="Date Of Submission" required>
-                                                                        </div>
-                                                                    </div>
-
                                                                 </div>
                                                             </div>
-                                                            <!-- <div class="col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="street">Street &
-                                                                            Number</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="street" name="street" placeholder="Street no/address" required>
-                                                                        </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="jettyname">
+                                                                        Name Of Jetty
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="" name=""
+                                                                            placeholder="Name of Jetty" required>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="city">
-                                                                            City</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
-                                                                        </div>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="nameofboatclub">
+                                                                        Name Of Boat Club
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="nameofboatclub" name="nameofboatclub"
+                                                                            placeholder="Name of boat Club" required>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="lga">
-                                                                            L.G.A</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="lga" name="lga" placeholder="Local governmaent Area" required>
-                                                                        </div>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" for="dateSubmitted">
+                                                                        Date this document submitted:
+                                                                    </label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            id="dateSubmitted" name="Date Submitted"
+                                                                            placeholder="Date this document submitted" required>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="state">State</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="state" name="state" placeholder="State" required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="country">Country</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="country" name="country" placeholder="Country" required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="phone_number">Phone
-                                                                            No</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Phone number" required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="alternate_phone_number">
-                                                                            Alternative
-                                                                            Phone No</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="alternate_phone_number" name="alternate_phone_number" placeholder="Alternate number">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label class="form-label" for="date_of_birth">Date
-                                                                            of
-                                                                            birth</label>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" placeholder="Date of Birth">
-                                                                        </div>
-                                                                    </div>
-                                                                </div> -->
+                                                            </div>
                                                         </div>
                                                     </div>
-
-
-                                                    <ul class="nk-stepper-pagination pt-4 gx-4 gy-2 stepper-pagination">
-                                                        <li class="step-prev">
-                                                            <button class="btn btn-dim btn-primary">Back</button>
-                                                        </li>
-                                                        <li class="step-next">
-                                                            <button class="btn btn-primary">Continue</button>
-                                                        </li>
-                                                        <li class="step-submit">
-                                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                                        </li>
-                                                    </ul>
                                                 </div>
-                                        </form>
+                                            </div>
+                                            <ul class="nk-stepper-pagination pt-4 gx-4 gy-2 stepper-pagination">
+                                                <li class="step-prev">
+                                                    <button class="btn btn-dim btn-primary">Back</button>
+                                                </li>
+                                                <li class="step-next">
+                                                    <button class="btn btn-primary">Continue</button>
+                                                </li>
+                                                <li class="step-submit">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card col-md-10 widget box box-shadow mb-4 form-dredging">
-                            <div class="widget-header">
-                                <div class="row">
-                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>Dredging Form</h4>
+
+                            <div class="card col-md-10 widget box box-shadow mb-4 form-dredging">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4>Dredging Form</h4>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="widget-content widget-content-area">
-                                <div class="form-group row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <form class="nk-stepper stepper-init is-alter" action="#"
-                                            id="stepper-survey-v2">
+                                <div class="widget-content widget-content-area">
+                                    <div class="form-group row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="nk-stepper-content">
                                                 <div class="nk-stepper-progress stepper-progress mb-4">
                                                     <div class="stepper-progress-count mb-2"></div>
@@ -921,7 +526,8 @@
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
-                                                                        for="sv1-email-address">Email Address</label>
+                                                                        for="sv1-email-address">Email
+                                                                        Address</label>
                                                                     <div class="form-control-wrap">
                                                                         <input type="text" class="form-control"
                                                                             id="sv1-email-address"
@@ -935,7 +541,8 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="form-label"
-                                                                            for="sv1-email-address">Date of Site
+                                                                            for="sv1-email-address">Date of
+                                                                            Site
                                                                             Inspection:</label>
                                                                         <div class="form-control-wrap">
                                                                             <input type="text" class="form-control"
@@ -1083,14 +690,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <!-- <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label" for="sv1-email-address">iv</label>
-                                                                            <div class="form-control-wrap">
-                                                                                <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Email Address" required>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> -->
                                                         </div>
                                                     </div>
                                                     <div class="nk-stepper-step">
@@ -1133,42 +732,8 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <!-- <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">Gender </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <ul class="custom-control-group">
-                                                                                    <li>
-                                                                                        <div class="custom-control custom-radio">
-                                                                                            <input type="radio" class="custom-control-input" name="sv2-gender" id="sv2-gender-male" value="gender-male" required>
-                                                                                            <label class="custom-control-label" for="sv2-gender-male">Male</label>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <div class="custom-control custom-radio">
-                                                                                            <input type="radio" class="custom-control-input" name="sv2-gender" id="sv2-gender-female" value="gender-female" required>
-                                                                                            <label class="custom-control-label" for="sv2-gender-female">Female</label>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> -->
-                                                            <!-- <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">Upload Documents</label>
-                                                                            <span class="form-note mb-2">( Files accepted: .pdf. doc/docx - Max file size: 190k for demo limit )</span>
-                                                                            <div class="form-control-wrap">
-                                                                                <div class="form-file">
-                                                                                    <input type="file" multiple class="form-file-input" id="sv2-file-attachment">
-                                                                                    <label class="form-file-label" for="sv2-file-attachment">Choose files....</label>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> -->
                                                         </div>
                                                     </div>
-
                                                     <div class="nk-stepper-step">
                                                         <div class="nk-stepper-step-head mb-4">
                                                             <h5 class="title">FEES NOW DUE</h5>
@@ -1178,7 +743,8 @@
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
-                                                                        for="sv1-email-address">Application Fee:</label>
+                                                                        for="sv1-email-address">Application
+                                                                        Fee:</label>
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox"
                                                                             class="custom-control-input"
@@ -1187,13 +753,6 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
                                                             <div class="col-12">
@@ -1209,19 +768,13 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
-                                                                        for="sv1-email-address">PENALTY FOR CONTRAVENTION
+                                                                        for="sv1-email-address">PENALTY FOR
+                                                                        CONTRAVENTION
                                                                         of No. 13 of 1997 Fee:</label>
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox"
@@ -1231,19 +784,13 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
-                                                                        for="sv1-email-address">Shore Utilization</label>
+                                                                        for="sv1-email-address">Shore
+                                                                        Utilization</label>
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox"
                                                                             class="custom-control-input"
@@ -1252,264 +799,16 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
-
-                                                            <!-- <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Drilling</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Bridge Crossing</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Pipeline Crossing</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Utility Lines Crossing</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Hydrographic/Seismic Surveys</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Hydrographic/Seismic Surveys</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Under-water Engineering Works</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Erection of Temporary/Permanent Structures</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Mooring Facilities within the waterways</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Diversion of Water from Waterways </label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Research </label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Others </label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div> -->
-
-
-                                                            <!-- <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">Gender </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <ul class="custom-control-group">
-                                                                                    <li>
-                                                                                        <div class="custom-control custom-radio">
-                                                                                            <input type="radio" class="custom-control-input" name="sv2-gender" id="sv2-gender-male" value="gender-male" required>
-                                                                                            <label class="custom-control-label" for="sv2-gender-male">Male</label>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <div class="custom-control custom-radio">
-                                                                                            <input type="radio" class="custom-control-input" name="sv2-gender" id="sv2-gender-female" value="gender-female" required>
-                                                                                            <label class="custom-control-label" for="sv2-gender-female">Female</label>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> -->
-                                                            <!-- <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">Upload Documents</label>
-                                                                            <span class="form-note mb-2">( Files accepted: .pdf. doc/docx - Max file size: 190k for demo limit )</span>
-                                                                            <div class="form-control-wrap">
-                                                                                <div class="form-file">
-                                                                                    <input type="file" multiple class="form-file-input" id="sv2-file-attachment">
-                                                                                    <label class="form-file-label" for="sv2-file-attachment">Choose files....</label>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> -->
                                                         </div>
                                                     </div>
-
                                                     <div class="nk-stepper-step">
                                                         <div class="nk-stepper-step-head mb-4">
                                                             <h5 class="title">FEES NOW DUE</h5>
                                                             <!-- <p>Tation argumentum et usu, dicit viderer evertitur te has</p> -->
                                                         </div>
                                                         <div class="row g-3">
-                                                            <!-- <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Application Fee:</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">DREDGING/RECLAMATION Fee:</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">PENALTY FOR CONTRAVENTION of No. 13 of 1997  Fee:</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Shore Utilization</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div> -->
-
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
@@ -1522,64 +821,13 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
-                                                                        for="sv1-email-address">Bridge Crossing</label>
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="custom-control-input"
-                                                                            name="sv2-time-avilability"
-                                                                            id="sv2-time-avilability-freelance" required>
-                                                                        <label class="custom-control-label"
-                                                                            for="sv2-time-avilability-freelance"></label>
-                                                                    </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-12">
-                                                                <div class="form-group">
-                                                                    <label class="form-label"
-                                                                        for="sv1-email-address">Pipeline Crossing</label>
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox"
-                                                                            class="custom-control-input"
-                                                                            name="sv2-time-avilability"
-                                                                            id="sv2-time-avilability-freelance" required>
-                                                                        <label class="custom-control-label"
-                                                                            for="sv2-time-avilability-freelance"></label>
-                                                                    </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-12">
-                                                                <div class="form-group">
-                                                                    <label class="form-label"
-                                                                        for="sv1-email-address">Utility Lines
+                                                                        for="sv1-email-address">Bridge
                                                                         Crossing</label>
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox"
@@ -1589,280 +837,49 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
 
-                                                            <!-- <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Hydrographic/Seismic Surveys</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div> -->
-                                                            <!--
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Hydrographic/Seismic Surveys</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Under-water Engineering Works</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Erection of Temporary/Permanent Structures</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Mooring Facilities within the waterways</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Diversion of Water from Waterways </label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Research </label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Others </label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div> -->
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label class="form-label"
+                                                                        for="sv1-email-address">Pipeline
+                                                                        Crossing</label>
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox"
+                                                                            class="custom-control-input"
+                                                                            name="sv2-time-avilability"
+                                                                            id="sv2-time-avilability-freelance" required>
+                                                                        <label class="custom-control-label"
+                                                                            for="sv2-time-avilability-freelance"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
 
-
-                                                            <!-- <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">Gender </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <ul class="custom-control-group">
-                                                                                    <li>
-                                                                                        <div class="custom-control custom-radio">
-                                                                                            <input type="radio" class="custom-control-input" name="sv2-gender" id="sv2-gender-male" value="gender-male" required>
-                                                                                            <label class="custom-control-label" for="sv2-gender-male">Male</label>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <div class="custom-control custom-radio">
-                                                                                            <input type="radio" class="custom-control-input" name="sv2-gender" id="sv2-gender-female" value="gender-female" required>
-                                                                                            <label class="custom-control-label" for="sv2-gender-female">Female</label>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> -->
-                                                            <!-- <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">Upload Documents</label>
-                                                                            <span class="form-note mb-2">( Files accepted: .pdf. doc/docx - Max file size: 190k for demo limit )</span>
-                                                                            <div class="form-control-wrap">
-                                                                                <div class="form-file">
-                                                                                    <input type="file" multiple class="form-file-input" id="sv2-file-attachment">
-                                                                                    <label class="form-file-label" for="sv2-file-attachment">Choose files....</label>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> -->
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label class="form-label"
+                                                                        for="sv1-email-address">Utility
+                                                                        Lines
+                                                                        Crossing</label>
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox"
+                                                                            class="custom-control-input"
+                                                                            name="sv2-time-avilability"
+                                                                            id="sv2-time-avilability-freelance" required>
+                                                                        <label class="custom-control-label"
+                                                                            for="sv2-time-avilability-freelance"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-
-
-
-
                                                     <div class="nk-stepper-step">
                                                         <div class="nk-stepper-step-head mb-4">
                                                             <h5 class="title">Continuation</h5>
                                                             <!-- <p>Tation argumentum et usu, dicit viderer evertitur te has</p> -->
                                                         </div>
                                                         <div class="row g-3">
-                                                            <!-- <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Application Fee:</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">DREDGING/RECLAMATION Fee:</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">PENALTY FOR CONTRAVENTION of No. 13 of 1997  Fee:</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Shore Utilization</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div> -->
-
-                                                            <!-- <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Drilling</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Bridge Crossing</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Pipeline Crossing</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div> -->
-
-                                                            <!-- <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Utility Lines Crossing</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div> -->
-                                                            <!--
-                                                                         <div class="col-12">
-                                                                            <div class="form-group">
-                                                                                <label class="form-label" for="sv1-email-address">Hydrographic/Seismic Surveys</label>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                                </div>
-                                                                                    <br>
-                                                                                <div class="form-control-wrap">
-                                                                                    <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>  -->
-
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
@@ -1876,20 +893,14 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
-                                                                        for="sv1-email-address">Under-water Engineering
+                                                                        for="sv1-email-address">Under-water
+                                                                        Engineering
                                                                         Works</label>
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox"
@@ -1899,13 +910,6 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
 
@@ -1922,20 +926,15 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
-                                                                        for="sv1-email-address">Mooring Facilities within
+                                                                        for="sv1-email-address">Mooring
+                                                                        Facilities
+                                                                        within
                                                                         the waterways</label>
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox"
@@ -1945,20 +944,15 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
-                                                                        for="sv1-email-address">Diversion of Water from
+                                                                        for="sv1-email-address">Diversion of
+                                                                        Water
+                                                                        from
                                                                         Waterways </label>
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox"
@@ -1968,20 +962,14 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
-                                                                        for="sv1-email-address">Research </label>
+                                                                        for="sv1-email-address">Research
+                                                                    </label>
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox"
                                                                             class="custom-control-input"
@@ -1990,20 +978,14 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label"
-                                                                        for="sv1-email-address">Others </label>
+                                                                        for="sv1-email-address">Others
+                                                                    </label>
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox"
                                                                             class="custom-control-input"
@@ -2012,74 +994,31 @@
                                                                         <label class="custom-control-label"
                                                                             for="sv2-time-avilability-freelance"></label>
                                                                     </div>
-                                                                    {{-- <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="Amount" required>
-                                                                        </div>
-                                                                            <br>
-                                                                        <div class="form-control-wrap">
-                                                                            <input type="text" class="form-control" id="sv1-email-address" name="sv1-email-address" placeholder="RECIEPT NO" required>
-                                                                        </div> --}}
                                                                 </div>
                                                             </div>
-
-
-                                                            <!-- <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">Gender </label>
-                                                                            <div class="form-control-wrap">
-                                                                                <ul class="custom-control-group">
-                                                                                    <li>
-                                                                                        <div class="custom-control custom-radio">
-                                                                                            <input type="radio" class="custom-control-input" name="sv2-gender" id="sv2-gender-male" value="gender-male" required>
-                                                                                            <label class="custom-control-label" for="sv2-gender-male">Male</label>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <div class="custom-control custom-radio">
-                                                                                            <input type="radio" class="custom-control-input" name="sv2-gender" id="sv2-gender-female" value="gender-female" required>
-                                                                                            <label class="custom-control-label" for="sv2-gender-female">Female</label>
-                                                                                        </div>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> -->
-
-                                                            <!-- <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <label class="form-label">Upload Documents</label>
-                                                                            <span class="form-note mb-2">( Files accepted: .pdf. doc/docx - Max file size: 190k for demo limit )</span>
-                                                                            <div class="form-control-wrap">
-                                                                                <div class="form-file">
-                                                                                    <input type="file" multiple class="form-file-input" id="sv2-file-attachment">
-                                                                                    <label class="form-file-label" for="sv2-file-attachment">Choose files....</label>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> -->
                                                         </div>
                                                     </div>
-
-
                                                 </div>
-                                                <ul class="nk-stepper-pagination pt-4 gx-4 gy-2 stepper-pagination">
-                                                    <li class="step-prev"><button
-                                                            class="btn btn-dim btn-primary">Back</button></li>
-                                                    <li class="step-next"><button
-                                                            class="btn btn-primary">Continue</button></li>
-                                                    <li class="step-submit"><button
-                                                            class="btn btn-primary">Submit</button></li>
-                                                </ul>
                                             </div>
-                                        </form>
+                                            <ul class="nk-stepper-pagination pt-4 gx-4 gy-2 stepper-pagination">
+                                                <li class="step-prev"><button
+                                                        class="btn btn-dim btn-primary">Back</button>
+                                                </li>
+                                                <li class="step-next"><button class="btn btn-primary">Continue</button>
+                                                </li>
+                                                <li class="step-submit"><button class="btn btn-primary">Submit</button>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
     <!-- Main Body Ends -->
@@ -2108,12 +1047,14 @@
                 const selectedOption = applicationTypeSelect.value;
 
                 console.log(selectedOption);
-                // Show the default form for all options except 'right-of-way'
-                formRightOfWay.style.display = selectedOption === 'right-of-way' ? 'block' :
-                    'none';
-
-                // Show the second form only for 'dredging-access-charge' option
-                formDredging.style.display = selectedOption === 'dredging-access-charge' ? 'block' : 'none';
+                if (selectedOption == 'dredging-access-charge' || selectedOption ==
+                    'dredging-reclamation') {
+                    formDredging.style.display = 'block';
+                    formRightOfWay.style.display = 'none';
+                } else {
+                    formDredging.style.display = 'none';
+                    formRightOfWay.style.display = 'block';
+                }
             });
         });
     </script>

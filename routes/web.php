@@ -596,3 +596,5 @@ Route::resource('departments', DepartmentController::class);
 Route::resource('units', App\Http\Controllers\UnitController::class);
 Route::resource('unit-heads', App\Http\Controllers\UnitHeadController::class);
 Route::resource('departmentheads', App\Http\Controllers\DepartmentheadController::class);
+
+Route::resource('roles', App\Http\Controllers\RoleController::class);
