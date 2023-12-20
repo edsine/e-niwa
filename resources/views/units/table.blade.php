@@ -11,8 +11,8 @@
             <tbody>
             @foreach($units as $unit)
                 <tr>
-                    <td>{{ $unit->name }}</td>
-                    <td>{{ $unit->department?$unit->department->name:'no unit' }}</td>
+                    <td>{{ $unit->unit_name }}</td>
+                    <td>{{ $unit->department?$unit->department->department_unit:'no unit' }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['units.destroy', $unit->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

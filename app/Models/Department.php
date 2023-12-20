@@ -9,17 +9,18 @@ class Department extends Model
     public $table = 'departments';
 
     public $fillable = [
-        'name',
-        'description'
+        'department_unit',
+        'description',
+        'branch_id'
     ];
 
     protected $casts = [
-        'name' => 'string',
+        'department_unit' => 'string',
         'description' => 'string'
     ];
 
     public static array $rules = [
-        'name' => 'required',
+        'department_unit' => 'required',
         'description' => 'required'
     ];
 

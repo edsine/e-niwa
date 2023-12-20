@@ -11,7 +11,7 @@
             <tbody>
             @foreach($departments as $department)
                 <tr>
-                    <td>{{ $department->name }}</td>
+                    <td>{{ $department->department_unit }}</td>
                     <td>{{ $department->description }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['departments.destroy', $department->id], 'method' => 'delete']) !!}
